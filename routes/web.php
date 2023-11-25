@@ -36,8 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-///blog/blog/1
-
 Route::get('/blogovi', [BlogController::class, 'blogovi'])->name('blog.blogovi');
 
 Route::prefix('/blog')->group(function () {
@@ -91,7 +89,9 @@ Route::prefix('/alat/')->group(function () {
     });
 });
 
-Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
+Route::middleware('check_role:admin:user',)->group(function () {
+    Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
+});
 
 Route::prefix('/resurs')->group(function () {
     Route::controller(ResursController::class)->group(function () {

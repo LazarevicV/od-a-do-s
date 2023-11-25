@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('resurss', function (Blueprint $table) {
+        Schema::create('resurs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('naziv', 128)->charset('utf8mb4')->collate('utf8mb4_unicode_ci');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('resurss');
+        Schema::dropIfExists('resurs');
     }
 };
