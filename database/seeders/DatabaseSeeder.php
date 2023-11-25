@@ -14,14 +14,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
          // Seed podaci za resurse
-         DB::table('resurss')->insert([
+         DB::table('resurs')->insert([
             'naziv' => 'Primer resursa 1',
             'opis' => 'Ovo je opis resursa 1',
             'link' => 'http://primer-linka-1.com',
             'objavljen' => true,
         ]);
 
-        DB::table('resurss')->insert([
+        DB::table('resurs')->insert([
             'naziv' => 'Primer resursa 2',
             'opis' => 'Ovo je opis resursa 2',
             'link' => 'http://primer-linka-2.com',
@@ -66,6 +66,7 @@ class DatabaseSeeder extends Seeder
             'nickname' => 'john_doe',
             'email' => 'john@example.com',
             'password' => bcrypt('password123'),
+            'access_level' => 'admin',
         ]);
 
         DB::table('users')->insert([
@@ -73,6 +74,7 @@ class DatabaseSeeder extends Seeder
             'ime_prezime' => 'Jane Doe',
             'nickname' => 'jane_doe',
             'password' => bcrypt('password456'),
+            'access_level' => 'user',
         ]);
 
         // Seed podaci za komentare
