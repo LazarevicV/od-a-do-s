@@ -20,7 +20,7 @@ class BlogController extends Controller
     public function blog($id){
         $blog=Blog::find($id);
         if(!$blog) return abort(404);
-        return view('blog.blogovi', [
+        return view('blog.blog', [
             'blog'=>$blog,
             'title'=>$blog->naslov,
         ]);
@@ -86,7 +86,7 @@ class BlogController extends Controller
         $blog->istaknut= $request->input('istaknut');
         $blog->save();
 
-        return redirect(route('blog.izmeni', $id));
+        return redirect(route('blog.list'));
     }
     public function publish($id)
     {
