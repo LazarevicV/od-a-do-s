@@ -57,6 +57,11 @@ Route::prefix('/blog')->group(function () {
 
             Route::get('/publish/{id}', 'publish')->name('publish');
             Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+
+            Route::get('/istakni/{id}', 'istakni')->name('istakni');
+            Route::get('/obrisi_istakni/{id}', 'obrisi_istakni')->name('obrisi_istakni');
+
+            
         });
     });
 });
