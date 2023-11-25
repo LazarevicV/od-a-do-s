@@ -19,9 +19,9 @@ use App\Http\Controllers\KomentarController;
 */
 
 Route::get('/', function () {
-    $istaknuti_blogovi=BlogController::istaknuti();
+    $istaknuti_blogovi = BlogController::istaknuti();
     return view('pocetna', [
-        'istaknuti_blogovi'=>$istaknuti_blogovi,
+        'istaknuti_blogovi' => $istaknuti_blogovi,
         'title' => 'Почетна страница'
     ]);
 })->name('pocetna');
@@ -38,11 +38,13 @@ Route::middleware('auth')->group(function () {
 
 ///blog/blog/1
 
+Route::get('/blogovi', [BlogController::class, 'blogovi'])->name('blog.blogovi');
+
 Route::prefix('/blog')->group(function () {
     Route::name('blog.')->group(function () {
         Route::controller(BlogController::class)->group(function () {
-            Route::get('/blog/{id}', 'blog')->name('blog');
-            Route::get('/blogovi', 'blogovi')->name('blogovi');
+
+
 
             Route::get('/', 'list')->name('index');
             Route::get('/list', 'list')->name('list');
@@ -57,15 +59,16 @@ Route::prefix('/blog')->group(function () {
 
             Route::get('/publish/{id}', 'publish')->name('publish');
             Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+            Route::get('/{id}', 'blog')->name('blog');
         });
     });
 });
 
+Route::get('alati', [AlatController::class, 'alati'])->name('alat.alati');
+
 Route::prefix('/alat/')->group(function () {
     Route::controller(AlatController::class)->group(function () {
         Route::name('alat.')->group(function () {
-            Route::get('{id}', 'alat')->name('alat');
-            Route::get('alati', 'alati')->name('alati');
 
             Route::get('', 'list')->name('index');
             Route::get('list', 'list')->name('list');
@@ -78,15 +81,16 @@ Route::prefix('/alat/')->group(function () {
 
             Route::get('publish/{id}', 'publish')->name('publish');
             Route::get('unpublish/{id}', 'unpublish')->name('unpublish');
+            Route::get('{id}', 'alat')->name('alat');
         });
     });
 });
 
+Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
+
 Route::prefix('/resurs')->group(function () {
     Route::controller(ResursController::class)->group(function () {
         Route::name('resurs.')->group(function () {
-            Route::get('/{id}', 'resurs')->name('resurs');
-            Route::get('/resursi', 'resursi')->name('resursi');
 
             Route::get('/', 'list')->name('index');
             Route::get('/list', 'list')->name('list');
@@ -99,6 +103,7 @@ Route::prefix('/resurs')->group(function () {
 
             Route::get('/publish/{id}', 'publish')->name('publish');
             Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+            Route::get('/{id}', 'resurs')->name('resurs');
         });
     });
 });
@@ -118,4 +123,4 @@ Route::prefix('/komentar')->group(function () {
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

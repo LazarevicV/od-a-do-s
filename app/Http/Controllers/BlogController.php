@@ -22,7 +22,7 @@ class BlogController extends Controller
         if(!$blog) return abort(404);
         return view('blog.blogovi', [
             'blog'=>$blog,
-            'title'=>$blog->naslov
+            'title'=>$blog->naslov,
         ]);
     }
 
