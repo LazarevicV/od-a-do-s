@@ -86,7 +86,7 @@ class BlogController extends Controller
         $blog->istaknut= $request->input('istaknut');
         $blog->save();
 
-        return redirect(route('blog.izmeni', $id));
+        return redirect(route('blog.list'));
     }
     public function publish($id)
     {
