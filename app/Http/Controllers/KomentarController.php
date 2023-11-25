@@ -11,8 +11,8 @@ class KomentarController extends Controller
     public function dodajSubmit($blog_id,Request $request)
     {
         $komentar= new Komentar();
-        $komentar->naziv= $request->input('sadrzaj');
-        $komentar->korisnik_id = Auth::id();
+        $komentar->sadrzaj= $request->input('sadrzaj');
+        $komentar->user_id = Auth::id();
         $komentar->blog_id=$blog_id;
 
         return redirect(route('blog.blog', ['id'=>$blog_id]));

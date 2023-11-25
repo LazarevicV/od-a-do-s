@@ -105,4 +105,21 @@ class BlogController extends Controller
         $blog->save();
         return redirect(route('blog.list'));
     }
+    public function istakni($id)
+    {
+        $blog=Blog::find($id);
+        if(!$blog) return abort(404);
+        $blog->istaknut=1;
+        $blog->save();
+        return redirect(route('blog.list'));
+    }
+
+    public function obrisi_istakni($id)
+    {
+        $blog=Blog::find($id);
+        if(!$blog) return abort(404);
+        $blog->istaknut=0;
+        $blog->save();
+        return redirect(route('blog.list'));
+    }
 }
