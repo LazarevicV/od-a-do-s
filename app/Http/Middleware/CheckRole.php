@@ -24,6 +24,6 @@ class CheckRole
                 }
             }
         }
-        abort(403, 'Nemate pristup ovoj stranici.');
+        return redirect()->route('pocetna');
     }
 }
