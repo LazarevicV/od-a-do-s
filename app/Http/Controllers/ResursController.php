@@ -66,7 +66,7 @@ class ResursController extends Controller
         $resurs->objavljen= $request->input('objavljen');
         $resurs->save();
 
-        return redirect(route('resurs.izmeni', $id));
+        return redirect(route('resurs.list'));
     }
     public function publish($id)
     {

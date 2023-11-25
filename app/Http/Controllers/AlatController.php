@@ -63,7 +63,7 @@ class AlatController extends Controller
         $alat->objavljen= $request->input('objavljen');
         $alat->save();
 
-        return redirect(route('alat.izmeni', $id));
+        return redirect(route('alat.list'));
     }
     public function publish($id)
     {
