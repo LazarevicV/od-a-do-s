@@ -70,7 +70,7 @@
 								<li><a href="category.html">Дизајн</a></li>
 								<li><a href="category.html">Магазин</a></li>
 								<li><a href="category.html">Заједница</a></li>
-                                <li><a href="{{route('login')}}">Login</a></li>
+                                <li><a href="{{route('login')}}">Логин</a></li>
 							</ul>
 						</div>
 						{{-- <div class="col-2 text-end">
