@@ -37,6 +37,9 @@ U .env fajlu popunite vrednosti za DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME i 
 Kada je sve podešeno po koracima u .env fajlu možete migrirati bazu podataka. Ovo će kreirati sve tabele neophodne aplikaciji u vašoj bazi podataka.
 `php artisan migrate`
 
+## 11. Seedovanje baze 
+Pokrenite seedovanje baze kako bi se podaci uneli u bazu podataka.
+`php artisan db:seed`
 
 # Pokretanje projekta na local hostu
 
