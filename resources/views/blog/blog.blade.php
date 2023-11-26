@@ -41,7 +41,7 @@
                                     <h5 class="mr-2 d-flex align-items-center">
                                         {{ $komentar->user->nickname }}
                                         <span class="ml-2">&nbsp;|&nbsp;</span>
-                                        <span style="font-size: 12px;"> {{ $komentar->created_at->format('F j, Y \a\t h:i A') }}</span>
+                                        <span style="font-size: 12px;"> {{ $komentar->created_at}}</span>
                                     </h5>
                                 </div>
                                 
