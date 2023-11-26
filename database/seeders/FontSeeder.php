@@ -194,5 +194,123 @@ class FontSeeder extends Seeder
         $f->resurs_id = 1;
         $f->objavljen = true;
         $f->save();
+        
+        $f=new Font();
+        $f->id=18;
+        $f->naziv="Banana";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=19;
+        $f->naziv="Bipolar";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=20;
+        $f->naziv="Cevka";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=21;
+        $f->naziv="Kapak";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=22;
+        $f->naziv="KarmaKasha";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=23;
+        $f->naziv="KenzoTange";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=24;
+        $f->naziv="BukyVede";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=25;
+        $f->naziv="Konstelacia";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=26;
+        $f->naziv="Mountain";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=27;
+        $f->naziv="Prestilka";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=28;
+        $f->naziv="Skorid";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=29;
+        $f->naziv="Topola";
+        $f->opis='';
+        $f->link_detaljno='https://www.behance.net/gallery/14508699/TYPOKITCHEN-typography-workshop-(free-fonts)';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+
+        $f=new Font();
+        $f->id=30;
+        $f->naziv="Constantine";
+        $f->opis='';
+        $f->link_detaljno='https://www.dafont.com/constantine.font';
+        $f->resurs_id=1;
+        $f->objavljen=true;
+        $f->save();
+        
     }
 }

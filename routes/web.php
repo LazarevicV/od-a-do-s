@@ -6,6 +6,7 @@ use App\Http\Controllers\FontController;
 use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResursController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoTutorijalController;
 use Illuminate\Support\Facades\Route;
 
@@ -186,6 +187,36 @@ Route::prefix('/видео-упутство')->group(function () {
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
 
                 Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
+            });
+        });
+    });
+});
+
+// Route::middleware('check_role:admin')->group(function () {
+//     Route::prefix('/korisnici')->group(function() {
+//         Route::name('korisnici.')->group(function() {
+//             Route::controller(UserController::class)->group(function() {
+//                 Route::get('/list', 'list')->name('list');
+//                 Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
+//                 Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+//                 Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+//                 Route::get('/unesi', 'unesi')->name('unesi');
+//                 Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+//             });
+//         });
+//     });
+// });
+
+Route::middleware('check_role:admin')->group(function () {
+    Route::prefix('/корисници')->group(function() {
+        Route::name('korisnici.')->group(function() {
+            Route::controller(UserController::class)->group(function() {
+                Route::get('/листа', 'list')->name('list');
+                Route::get('/измени/{id}', 'izmeni')->name('izmeni');
+                Route::post('/измени/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
+                Route::get('/унеси', 'unesi')->name('unesi');
+                Route::post('/унеси', 'unesiSubmit')->name('unesiSubmit');
             });
         });
     });

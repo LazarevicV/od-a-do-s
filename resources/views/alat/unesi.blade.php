@@ -15,6 +15,11 @@
             </div>
 
             <div class="mb-3">
+                <label for="naziv" class="form-label">Линк:</label>
+                <input type="text" class="form-control" name="url" required>
+            </div>
+
+            <div class="mb-3">
                 <label for="objavljen" class="form-label">Објављен:</label>
                 <select class="form-select" name="objavljen">
                     <option value="0" selected>Не</option>

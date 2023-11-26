@@ -32,20 +32,8 @@ class BlogController extends Controller
         ]);
     }
 
-    public function kategorija($kategorija)
-    {
-        $blogovi = Blog::where('kategorija', $kategorija)->get();
-
-        return view('blog.kategorija', [
-            'blogovi' => $blogovi,
-            'title' => $kategorija,
-        ]);
-    }
-
-    public static function istaknuti()
-    {
-        $blogovi = Blog::where('istaknut', 1)->where('objavljen', 1)->get();
-
+    public static function istaknuti(){
+        $blogovi=Blog::where('istaknut', 1)->where('objavljen', 1)->get();
         return $blogovi;
     }
 

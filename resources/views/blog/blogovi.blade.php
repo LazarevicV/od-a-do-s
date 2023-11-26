@@ -1,7 +1,6 @@
 @extends('layouts.public')
 @section('content')
 
-<!-- Add this to your Blade view file -->
 <div class="container mt-5">
     <div class="row">
         @foreach ($blogovi as $blog)
