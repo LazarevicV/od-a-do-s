@@ -18,26 +18,10 @@ class DatabaseSeeder extends Seeder
             FontSeeder::class,
             FileSeeder::class,
             VideoTutorijalSeeder::class,
+            BlogSeeder::class,
         ]);
 
         // Seed podaci za blogove
-        DB::table('blogs')->insert([
-            'naslov' => 'Primer bloga 1',
-            'sadrzaj' => 'Ovo je sadržaj bloga 1',
-            'kategorija' => 'Tehnologija',
-            'slika' => 'azbuka.png',
-            'objavljen' => true,
-            'istaknut' => true,
-        ]);
-
-        DB::table('blogs')->insert([
-            'naslov' => 'Primer bloga 2',
-            'sadrzaj' => 'Ovo je sadržaj bloga 2',
-            'kategorija' => 'Recepti',
-            'slika' => 'logo.png',
-            'objavljen' => false,
-            'istaknut' => false,
-        ]);
 
         // Seed podaci za korisnike
         DB::table('users')->insert([
@@ -54,21 +38,6 @@ class DatabaseSeeder extends Seeder
             'nickname' => 'jane_doe',
             'password' => bcrypt('password456'),
             'access_level' => 'user',
-        ]);
-
-        // Seed podaci za komentare
-        DB::table('komentars')->insert([
-            'sadrzaj' => 'Ovo je komentar 1',
-            'objavljen' => true,
-            'user_id' => 1,
-            'blog_id' => 1,
-        ]);
-
-        DB::table('komentars')->insert([
-            'sadrzaj' => 'Ovo je komentar 2',
-            'objavljen' => false,
-            'user_id' => 2,
-            'blog_id' => 1,
         ]);
     }
 }

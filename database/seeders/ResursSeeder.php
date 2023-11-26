@@ -14,13 +14,14 @@ class ResursSeeder extends Seeder
     public function run(): void
     {
         $r=new Resurs();
-        $r->naziv='Фонтови';
-        $r->opis='Resurs font je dragoceni alat za svakog dizajnera i kreatora sadržaja. Ovaj resurs pruža sveobuhvatan pregled dostupnih fontova, uključujući njihove karakteristike, stilove, debljinu i varijacije. Olakšava proces odabira fontova za različite projekte, pružajući korisnicima ključne informacije o svakom fontu na jednostavan i pregledan način. Resurs font često sadrži i dodatne informacije, poput podrške za različite jezike i druge relevantne detalje, čime doprinosi efikasnom kreiranju estetskih i funkcionalnih dizajna.';
+        $r->naziv='База фонтова';
+        $r->opis='Фонтови играју кључну улогу у дизајну пружајући визуелни идентитет, тон и побољшавајући читљивост. За дизајнере који стварају садржај на српском, доступност различитих ћириличних фонтова је од суштинског значаја, омогућавајући им усаглашавање са културним нијансама и постизање хармоничне комбинације естетског привлачења и језичке аутентичности у њиховим дизајнима.';
         $r->save();
 
         $r=new Resurs();
         $r->naziv='Видео туторијали';
-        $r->opis='Resurs za video tutorijale je dragocen alat za kreatore edukativnih sadržaja. Pruža pregled i informacije o različitim tutorijalima, pomažući korisnicima da brzo identifikuju najrelevantnije resurse za svoje projekte. Ovaj resurs olakšava upoređivanje tutorijala po temi, nivou težine i stilu prezentacije, doprinoseći efikasnom odabiru optimalnih alata za prenos informacija. Dodatne informacije o jezicima i dostupnosti transkripcija unapređuju pristupačnost tutorijala.';
+        $r->opis='
+        Видео туториали представљају неизоставан извор образовања за широк спектар интересовања, укључујући области као што су SEO оптимизација и употреба ћирилице. Ови туториали обезбеђују визуелно и лако разумљиво учење, што је посебно битно за брзо усвајање и примену комплексних концепата. Независно од области примене, видео туториали су кључни за унапређење разумевања и успешну примену различитих вештина и техника.';
         $r->save();
     }
 }
