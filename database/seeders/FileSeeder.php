@@ -44,10 +44,29 @@ class FileSeeder extends Seeder
             ['naziv'=> 'NocturnoBG.zip', 'font_id'=> 7],
 
             ['naziv'=> 'Resavska BG OTF.zip', 'font_id'=> 8],
+            
+            ['naziv'=> 'Resavska BG Sans OTF.zip', 'font_id'=> 9],
 
-            ['naziv'=> 'Adamant BG OTF.zip', 'font_id'=> 9],
+            ['naziv'=> 'Resavska BG Sans TTF.zip', 'font_id'=> 9],
 
-            ['naziv'=> 'Adamant BG TTF.zip', 'font_id'=> 9],
+            ['naziv'=> 'Adamant BG OTF.zip', 'font_id'=> 10],
+
+            ['naziv'=> 'Adamant BG TTF.zip', 'font_id'=> 10],
+
+            ['naziv'=> 'AdamantSans BG.zip', 'font_id'=> 11],
+
+            ['naziv'=> 'NeoplantaBG.zip', 'font_id'=> 12],
+
+            ['naziv'=> 'PlatanBG.zip', 'font_id'=> 13],
+
+            ['naziv'=> 'NiokiBG.zip', 'font_id'=> 14],
+
+            ['naziv'=> 'LovelyBG.zip', 'font_id'=> 15],
+
+            ['naziv'=> 'InfluBG.zip', 'font_id'=> 16],
+
+            ['naziv'=> 'Tesla OTF.zip', 'font_id'=> 17],
+
         ]);
     }
 }
