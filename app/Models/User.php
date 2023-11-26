@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'ime_prezime',
         'email',
         'password',
     ];
@@ -45,5 +45,9 @@ class User extends Authenticatable
     public function komentari()
     {
         return $this->hasMany(Komentar::class);
+    }
+    public function hasRole($role)
+    {
+        return $this->access_level === $role;
     }
 }

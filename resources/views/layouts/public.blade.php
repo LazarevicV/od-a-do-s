@@ -22,6 +22,8 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 	<script src="https://cdn.tiny.cloud/1/YOUR_API_KEY/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <link rel="stylesheet" href="{{ asset('css/tiny-slider.css') }}">
@@ -62,6 +64,20 @@
 								</form>
 
 								<ul class="col-8 js-clone-nav text-start site-menu mx-auto d-flex justify-content-between">
+									@if (Auth::check() and Auth::user()->hasRole('admin'))
+										<li class="has-children">
+											<a>Админ мени</a>
+											<ul class="dropdown" style="font-size: 2em">
+												<li><a href="{{route('blog.list')}}">Блогови</a></li>
+												<li><a href="{{route('komentar.list')}}">Коментари</a></li>
+												<li><a href="{{route('alat.list')}}">Алати</a></li>
+												<li><a href="{{route('resurs.list')}}">Ресурси</a></li>
+												<li><a href="{{route('font.list')}}">Фонтови</a></li>
+												<li><a href="{{route('videoTutorijal.list')}}">Видео туторијали</a></li>
+                                                <li><a href="{{route('korisnici.list')}}">Корисници</a></li>
+											</ul>
+										</li>
+									@endif
 									<li ><a href="{{route('pocetna')}}">Почетна</a></li>
 									<li class="has-children">
 										<a>Развој</a>
@@ -81,7 +97,7 @@
 									<li><a href="{{route('blog.blogovi')}}">Магазин</a></li>
 									<li><a href="#">Заједница</a></li>
 
-									@if (Auth::check())               
+									@if (Auth::check())
 									<li><a href="{{route('profile.edit')}}">Профил</a></li>
 										<form action="{{route('logout')}}" method="POST">
 											@csrf
@@ -93,7 +109,7 @@
 											font-size: 18px;
 											width: 50px;
 											color: #b7bbbf;">
-												Логоут
+												Одјави се
 											</button>
 										</form>
 									{{-- </li> --}}
@@ -118,8 +134,9 @@
 			</div>
 		</nav>
 	</nav>
-
-
+	<div class="col-2 mx-auto">
+		@include('flash-message')
+	</div>
     @yield('content')
 
 
@@ -204,6 +221,6 @@
 			z-index: 1000;
 		}
 	</style>
-	
+
   </body>
   </html>

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('ime_prezime', 64)->charset('utf8mb4')->collate('utf8mb4_unicode_ci');
-            $table->string('nickname', 16)->charset('utf8mb4')->collate('utf8mb4_unicode_ci');;
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->set('access_level', ['admin', 'user'])->default('user');

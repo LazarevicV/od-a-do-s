@@ -67,7 +67,7 @@ class BlogController extends Controller
         $blog->istaknut= $request->input('istaknut');
         $blog->save();
 
-        return redirect(route('blog.list'))->with('info','Запис је унет');
+        return redirect(route('blog.list'))->with('info','Запис је унет.');
     }
 
     public function izmeni($id){
@@ -91,7 +91,7 @@ class BlogController extends Controller
         $blog->istaknut= $request->input('istaknut');
         $blog->save();
 
-        return redirect(route('blog.list'));
+        return redirect(route('blog.list'))->with('info','Запис је измењен.');
     }
     public function publish($id)
     {

@@ -14,7 +14,7 @@
                 <textarea id="editor" name="sadrzaj" required>{{ $resurs->opis }}</textarea>
             </div>
             
-            <input type="hidden" name="objavljen" value="{{ $resurs->objavljen }}">
+            <input type="hidden" name="objavljen" value="{{ $resurs->objavljen }}" readonly>
 
             <div class="mb-3">
                 <div class="row justify-content-center">
