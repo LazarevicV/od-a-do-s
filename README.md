@@ -54,3 +54,15 @@ Da biste pokrenuli lokalni razvojni server, možete pokrenuti sledeću komandu. 
 `php artisan serve`
 
 ## ############################################################################################ ##
+
+## Dodatne informacije:
+
+## Da biste videli admin deo stranice možete da se prijavite sa podacima:
+## -email: peraperic@gmail.com
+## -lozinka: perapera
+
+## Ako želite da se prijavite kao obični korisnik možete ga dodati preko register stranice ili se prijaviti sa podacima:
+## -email: mikamikic@gmail.com
+## -lozinka: mika
+
+## ############################################################################################ ##

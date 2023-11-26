@@ -5,6 +5,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FontController;
 use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\KontaktController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ResursController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoTutorijalController;
 use Illuminate\Support\Facades\Route;
@@ -191,21 +193,6 @@ Route::prefix('/видео-упутство')->group(function () {
     });
 });
 
-// Route::middleware('check_role:admin')->group(function () {
-//     Route::prefix('/korisnici')->group(function() {
-//         Route::name('korisnici.')->group(function() {
-//             Route::controller(UserController::class)->group(function() {
-//                 Route::get('/list', 'list')->name('list');
-//                 Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
-//                 Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
-//                 Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
-//                 Route::get('/unesi', 'unesi')->name('unesi');
-//                 Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
-//             });
-//         });
-//     });
-// });
-
 Route::middleware('check_role:admin')->group(function () {
     Route::prefix('/корисници')->group(function() {
         Route::name('korisnici.')->group(function() {
@@ -222,24 +209,12 @@ Route::middleware('check_role:admin')->group(function () {
 });
 
 Route::middleware('check_role:admin')->group(function () {
-    Route::prefix('/kontakt')->group(function() {
+    Route::prefix('/контакт')->group(function() {
         Route::name('kontakt.')->group(function() {
             Route::controller(KontaktController::class)->group(function() {
-                Route::get('/list', 'index')->name('list');
-                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
-                Route::get('/procitano/{id}', 'procitano')->name('check');
-            });
-        });
-    });
-});
-
-Route::middleware('check_role:admin')->group(function () {
-    Route::prefix('/kontakt')->group(function() {
-        Route::name('kontakt.')->group(function() {
-            Route::controller(KontaktController::class)->group(function() {
-                Route::get('/list', 'index')->name('list');
-                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
-                Route::get('/procitano/{id}', 'procitano')->name('check');
+                Route::get('/листа', 'index')->name('list');
+                Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
+                Route::get('/прочитано/{id}', 'procitano')->name('check');
             });
         });
     });

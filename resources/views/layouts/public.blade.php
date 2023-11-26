@@ -75,6 +75,7 @@
 												<li><a href="{{route('font.list')}}" class="dropdaun">Фонтови</a></li>
 												<li><a href="{{route('videoTutorijal.list')}}" class="dropdaun">Видео туторијали</a></li>
                                                 <li><a href="{{route('korisnici.list')}}" class="dropdaun">Корисници</a></li>
+												<li><a href="{{route('kontakt.list')}}" class="dropdaun">Контакт</a></li>
 											</ul>
 										</li>
 									@endif
@@ -149,7 +150,7 @@
             </div>
             <div class="col-lg-4 ps-lg-5">
                 <div class="widget">
-					<h3>Контакт форма</h3>
+					<div style="text-align: center;"><h3>Контакт форма</h3></div>
 					<form action="#" method="post">
 						<div class="mb-3">
 							<label for="email" class="form-label">Е-пошта:</label>
