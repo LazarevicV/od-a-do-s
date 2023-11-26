@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            AlatiSeeder::class,
+        ]);
          // Seed podaci za resurse
          DB::table('resurs')->insert([
             'naziv' => 'Primer resursa 1',
@@ -25,19 +28,6 @@ class DatabaseSeeder extends Seeder
             'naziv' => 'Primer resursa 2',
             'opis' => 'Ovo je opis resursa 2',
             'link' => 'http://primer-linka-2.com',
-            'objavljen' => false,
-        ]);
-
-        // Seed podaci za alate
-        DB::table('alats')->insert([
-            'naziv' => 'Primer alata 1',
-            'opis' => 'Ovo je opis alata 1',
-            'objavljen' => true,
-        ]);
-
-        DB::table('alats')->insert([
-            'naziv' => 'Primer alata 2',
-            'opis' => 'Ovo je opis alata 2',
             'objavljen' => false,
         ]);
 

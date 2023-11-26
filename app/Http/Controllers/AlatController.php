@@ -21,6 +21,7 @@ class AlatController extends Controller
             'title'=>$alat->naziv
         ]);
     }
+    
     //crud metode
     public function list(){
         $alati=Alat::all();

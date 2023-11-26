@@ -19,7 +19,6 @@
         @endforeach
     </div>
 </div>
-
 <style>
     .card-img-top {
         object-fit: cover;
