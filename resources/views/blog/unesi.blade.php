@@ -40,10 +40,16 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Unesi</button>
-            <button class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">
-                <a href="{{route('blog.list')}}">Откажи</a>
-            </button>
+            <div class="mb-3">
+                <div class="row justify-content-center">
+                    <button class="col-3 mx-1 btn btn-primary">
+                        Сачувај
+                    </button>
+                    <button class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">
+                        <a href="{{route('blog.list')}}">Откажи</a>
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
 

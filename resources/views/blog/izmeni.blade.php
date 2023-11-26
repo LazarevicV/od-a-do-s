@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
 
-    <div class="container mt-5 col-4">
+    <div class="container mt-5 col-6">
         <h1>{{$title}}</h1>
         <form method="POST" action="{{ route('blog.izmeniSubmit', $blog->id) }}">
             @csrf

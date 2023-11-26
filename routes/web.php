@@ -27,7 +27,7 @@ Route::get('/', function () {
 })->name('pocetna');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('pocetna');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

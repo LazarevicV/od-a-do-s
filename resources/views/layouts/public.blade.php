@@ -72,7 +72,28 @@
 								<li><a href="category.html">Дизајн</a></li>
 								<li><a href="category.html">Магазин</a></li>
 								<li><a href="category.html">Заједница</a></li>
-                                <li><a href="{{route('login')}}">Пријави се</a></li>
+
+                                <li><a href="{{route('profile.edit')}}">Профил</a></li>
+                                @if (Auth::check())
+                                {{-- <li> --}}
+                                    <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <button style="background-color: transparent;
+                                        border: none;
+                                        cursor: pointer;
+                                        padding-top: 0.6em;
+                                        font-family: inherit;
+                                        font-size: 18px;
+                                        width: 50px;
+                                        color: #b7bbbf;">
+                                            Логоут
+                                        </button>
+                                    </form>
+                                {{-- </li> --}}
+                                @else
+                                    <li><a href="{{route('login')}}">Улогуј се</a></li>
+                                    <li><a href="{{route('register')}}">Региструј се</a></li>
+                                @endif
 							</ul>
 						</div>
 						{{-- <div class="col-2 text-end">
