@@ -86,9 +86,7 @@ Route::prefix('/alat/')->group(function () {
     });
 });
 
-Route::middleware('check_role:admin:user',)->group(function () {
-    Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
-});
+Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
 
 Route::prefix('/resurs')->group(function () {
     Route::controller(ResursController::class)->group(function () {

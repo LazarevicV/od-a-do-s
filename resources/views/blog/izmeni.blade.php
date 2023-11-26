@@ -12,7 +12,7 @@
 
             <div class="mb-3">
                 <label for="sadrzaj" class="form-label">Садржај (*)</label>
-                <textarea required name="sadrzaj" class="form-control">{{ $blog->sadrzaj }}</textarea>
+                <textarea id="editor" name="sadrzaj" required>{{$blog->sadrzaj}}</textarea>
             </div>
 
             <div class="mb-3">
@@ -28,18 +28,18 @@
             <input type="hidden" name="objavljen" value="{{ $blog->objavljen }}">
             <input type="hidden" name="istaknut" value="{{ $blog->istaknut }}">
 
-        <div class="mb-3">
-            <div class="row justify-content-center">
-                <button class="col-3 mx-1 btn btn-primary">
-                    Сачувај
-                </button>
-                <button class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">
-                    <a href="{{route('blog.list')}}">Откажи</a>
-                </button>
+            <div class="mb-3">
+                <div class="row justify-content-center">
+                    <button class="col-3 mx-1 btn btn-primary">
+                        Сачувај
+                    </button>
+                    <button class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">
+                        <a href="{{route('blog.list')}}">Откажи</a>
+                    </button>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
 
 <script>

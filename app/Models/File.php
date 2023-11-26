@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Resurs extends Model
+class File extends Model
 {
     use HasFactory;
-    public function fontovi()
+    public function font()
     {
-        return $this->hasMany(Font::class);
+        return $this->belongsTo(Font::class);
     }
 }
