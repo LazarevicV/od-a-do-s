@@ -34,81 +34,82 @@
 	<title>{{$title}}</title>
 </head>
 <body>
-
-	<div class="site-mobile-menu site-navbar-target">
-		<div class="site-mobile-menu-header">
-			<div class="site-mobile-menu-close">
-				<span class="icofont-close js-menu-toggle"></span>
+	<nav class="site-nav" id="sticky-nav">
+		<div class="site-mobile-menu site-navbar-target">
+			<div class="site-mobile-menu-header">
+				<div class="site-mobile-menu-close">
+					<span class="icofont-close js-menu-toggle"></span>
+				</div>
 			</div>
+			<div class="site-mobile-menu-body"></div>
 		</div>
-		<div class="site-mobile-menu-body"></div>
-	</div>
 
-	<nav class="site-nav">
-		<div class="container">
-			<div class="menu-bg-wrap">
-				<div class="site-navigation">
-					<div class="row g-0 align-items-center">
-						<div class="col-3 d-flex align-items-center">
-							<a href="{{route('pocetna')}}">
-								<img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid">
-							</a>
+		<nav class="site-nav">
+			<div class="container">
+				<div class="menu-bg-wrap">
+					<div class="site-navigation">
+						<div class="row g-0 align-items-center">
+							<div class="col-3 d-flex align-items-center">
+								<a href="{{route('pocetna')}}">
+									<img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid">
+								</a>
+							</div>
+
+							<div class="col-9 text-center">
+								<form action="#" class="search-form d-inline-block d-lg-none">
+									<input type="text" class="form-control" placeholder="Search...">
+									<span class="bi-search"></span>
+								</form>
+
+								<ul class="col-8 js-clone-nav text-start site-menu mx-auto d-flex justify-content-between">
+									<li ><a href="{{route('pocetna')}}">Почетна</a></li>
+									<li class="has-children">
+										<a>Развој</a>
+										<ul class="dropdown">
+											<li><a href="{{route('alat.alati')}}">Алати</a></li>
+											<li><a href="{{route('uputstva')}}">Инфо</a></li>
+										</ul>
+									</li>
+									<li><a href="category.html">Дизајн</a></li>
+									<li><a href="category.html">Магазин</a></li>
+									<li><a href="{{route('blog.blogovi')}}">Заједница</a></li>
+
+									@if (Auth::check())               
+									<li><a href="{{route('profile.edit')}}">Профил</a></li>
+										<form action="{{route('logout')}}" method="POST">
+											@csrf
+											<button style="background-color: transparent;
+											border: none;
+											cursor: pointer;
+											padding-top: 0.6em;
+											font-family: inherit;
+											font-size: 18px;
+											width: 50px;
+											color: #b7bbbf;">
+												Логоут
+											</button>
+										</form>
+									{{-- </li> --}}
+									@else
+										<li><a href="{{route('login')}}">Улогуј се</a></li>
+										<li><a href="{{route('register')}}">Региструј се</a></li>
+									@endif
+								</ul>
+							</div>
+							{{-- <div class="col-2 text-end">
+								<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+									<span></span>
+								</a>
+								<form action="#" class="search-form d-none d-lg-inline-block">
+									<input type="text" class="form-control" placeholder="Search...">
+									<span class="bi-search"></span>
+								</form>
+							</div> --}}
 						</div>
-
-						<div class="col-9 text-center">
-							<form action="#" class="search-form d-inline-block d-lg-none">
-								<input type="text" class="form-control" placeholder="Search...">
-								<span class="bi-search"></span>
-							</form>
-
-							<ul class="col-8 js-clone-nav text-start site-menu mx-auto d-flex justify-content-between">
-								<li ><a href="{{route('pocetna')}}">Почетна</a></li>
-								<li class="has-children">
-									<a>Развој</a>
-									<ul class="dropdown">
-										<li><a href="{{route('alat.alati')}}">Алати</a></li>
-										<li><a href="{{route('uputstva')}}">Инфо</a></li>
-									</ul>
-								</li>
-								<li><a href="category.html">Дизајн</a></li>
-								<li><a href="category.html">Магазин</a></li>
-								<li><a href="{{route('blog.blogovi')}}">Заједница</a></li>
-
-                                @if (Auth::check())               
-								<li><a href="{{route('profile.edit')}}">Профил</a></li>
-                                    <form action="{{route('logout')}}" method="POST">
-                                        @csrf
-                                        <button style="background-color: transparent;
-                                        border: none;
-                                        cursor: pointer;
-                                        padding-top: 0.6em;
-                                        font-family: inherit;
-                                        font-size: 18px;
-                                        width: 50px;
-                                        color: #b7bbbf;">
-                                            Логоут
-                                        </button>
-                                    </form>
-                                {{-- </li> --}}
-                                @else
-                                    <li><a href="{{route('login')}}">Улогуј се</a></li>
-                                    <li><a href="{{route('register')}}">Региструј се</a></li>
-                                @endif
-							</ul>
-						</div>
-						{{-- <div class="col-2 text-end">
-							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
-								<span></span>
-							</a>
-							<form action="#" class="search-form d-none d-lg-inline-block">
-								<input type="text" class="form-control" placeholder="Search...">
-								<span class="bi-search"></span>
-							</form>
-						</div> --}}
 					</div>
 				</div>
 			</div>
-		</div>
+		</nav>
 	</nav>
 
 
@@ -188,6 +189,14 @@
     <script src="{{ asset('js/counter.js')}}"></script>
     <script src="{{ asset('js/custom.js')}}"></script>
 
-
+	<style>
+		#sticky-nav {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+		}
+	</style>
+	
   </body>
   </html>
