@@ -36,15 +36,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-///blog/blog/1
-
 Route::get('/blogovi', [BlogController::class, 'blogovi'])->name('blog.blogovi');
 
 Route::prefix('/blog')->group(function () {
     Route::name('blog.')->group(function () {
         Route::controller(BlogController::class)->group(function () {
-
-
 
             Route::get('/', 'list')->name('index');
             Route::get('/list', 'list')->name('list');
@@ -62,7 +58,6 @@ Route::prefix('/blog')->group(function () {
 
             Route::get('/istakni/{id}', 'istakni')->name('istakni');
             Route::get('/obrisi_istakni/{id}', 'obrisi_istakni')->name('obrisi_istakni');
-
 
             Route::get('/{id}', 'blog')->name('blog');
         });
@@ -91,7 +86,9 @@ Route::prefix('/alat/')->group(function () {
     });
 });
 
-Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
+Route::middleware('check_role:admin:user',)->group(function () {
+    Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
+});
 
 Route::prefix('/resurs')->group(function () {
     Route::controller(ResursController::class)->group(function () {
@@ -123,6 +120,8 @@ Route::prefix('/komentar')->group(function () {
 
             Route::get('/publish/{id}', 'publish')->name('publish');
             Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+
+            Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
         });
     });
 });

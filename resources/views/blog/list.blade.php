@@ -7,16 +7,16 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h1>{{ $title }}</h1>
                     <a href="{{ route('blog.unesi') }}" class="btn btn-primary btn-sm p-2">
-                        Dodaj
+                        Додај
                     </a>
                 </div>
                 <table id="tabela" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Naslov</th>
-                            <th>Izmeni</th>
-                            <th>Objavi</th>
-                            <th>Istakni</th> <!-- New column for the "Istakni" button -->
+                            <th>Наслов</th>
+                            <th>Измени</th>
+                            <th>Објави</th>
+                            <th>Истакни</th> <!-- New column for the "Istakni" button -->
                         </tr>
                     </thead>
                     <tbody>

@@ -14,35 +14,38 @@
             <textarea id="editor" name="sadrzaj" required></textarea>
         </div>
 
-        <div class="mb-3">
-            <label for="kategorija" class="form-label">Kategorija:</label>
-            <input type="text" class="form-control" name="kategorija" required>
-        </div>
+            <div class="mb-3">
+                <label for="kategorija" class="form-label">Категорија:</label>
+                <input type="text" class="form-control" name="kategorija" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="slika" class="form-label">Slika:</label>
-            <input type="text" class="form-control" name="slika" required>
-        </div>
+            <div class="mb-3">
+                <label for="slika" class="form-label">Слика:</label>
+                <input type="text" class="form-control" name="slika" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="objavljen" class="form-label">Objavljen:</label>
-            <select class="form-select" name="objavljen">
-                <option value="0">Ne</option>
-                <option value="1">Da</option>
-            </select>
-        </div>
+            <div class="mb-3">
+                <label for="objavljen" class="form-label">Објављен:</label>
+                <select class="form-select" name="objavljen">
+                    <option value="0">Не</option>
+                    <option value="1">Да</option>
+                </select>
+            </div>
 
-        <div class="mb-3">
-            <label for="istaknut" class="form-label">Istaknut:</label>
-            <select class="form-select" name="istaknut">
-                <option value="0">Ne</option>
-                <option value="1">Da</option>
-            </select>
-        </div>
+            <div class="mb-3">
+                <label for="istaknut" class="form-label">Истакнути:</label>
+                <select class="form-select" name="istaknut">
+                    <option value="0">Не</option>
+                    <option value="1">Да</option>
+                </select>
+            </div>
 
-        <button type="submit" class="btn btn-primary">Unesi</button>
-    </form>
-</div>
+            <button type="submit" class="btn btn-primary">Unesi</button>
+            <button class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">
+                <a href="{{route('blog.list')}}">Откажи</a>
+            </button>
+        </form>
+    </div>
 
 <script>
     tinymce.init({
