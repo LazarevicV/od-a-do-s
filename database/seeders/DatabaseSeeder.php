@@ -27,7 +27,6 @@ class DatabaseSeeder extends Seeder
         // Seed podaci za korisnike
         DB::table('users')->insert([
             'ime_prezime' => 'John Doe',
-            'nickname' => 'john_doe',
             'email' => 'john@example.com',
             'password' => bcrypt('password123'),
             'access_level' => 'admin',
@@ -36,7 +35,6 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'email' => 'jane@example.com',
             'ime_prezime' => 'Jane Doe',
-            'nickname' => 'jane_doe',
             'password' => bcrypt('password456'),
             'access_level' => 'user',
         ]);
