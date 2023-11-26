@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class ResursController extends Controller
 {
     public function resursi(){
-        $resursi=Resurs::all();
+        $resursi=Resurs::where('objavljen', 1)->get();
         return view('resurs.resursi',[
             'resursi'=>$resursi,
             'title'=>'Ресурси'
         ]);
     }
-    
+
 
     public function resurs($id){
         $resurs=Resurs::find($id);
@@ -43,10 +43,10 @@ class ResursController extends Controller
         $resurs->opis= $request->input('opis');
         $resurs->objavljen= $request->input('objavljen');
         $resurs->save();
-        
+
         return redirect(route('resurs.list'))->with('info','Запис је унет');
     }
-    
+
     public function izmeni($id){
         $resurs=Resurs::find($id);
         if(!$resurs) return abort(404);
