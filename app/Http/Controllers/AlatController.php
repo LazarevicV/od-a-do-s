@@ -42,6 +42,7 @@ class AlatController extends Controller
         $alat->naziv= $request->input('naziv');
         $alat->opis= $request->input('opis');
         $alat->objavljen= $request->input('objavljen');
+        $alat->url = $request->input('url');
         $alat->save();
 
         return redirect(route('alat.list'))->with('info','Запис је унет');
@@ -63,6 +64,7 @@ class AlatController extends Controller
         $alat->naziv= $request->input('naziv');
         $alat->opis= $request->input('opis');
         $alat->objavljen= $request->input('objavljen');
+        $alat->url = $request->input('url');
         $alat->save();
 
         return redirect(route('alat.list'));

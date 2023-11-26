@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             FileSeeder::class,
             VideoTutorijalSeeder::class,
             BlogSeeder::class,
+            AlatSeeder::class,
         ]);
 
         // Seed podaci za blogove

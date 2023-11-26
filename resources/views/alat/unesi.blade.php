@@ -15,6 +15,11 @@
             </div>
 
             <div class="mb-3">
+                <label for="url" class="form-label">Путања до алата:</label>
+                <input type="text" class="form-control" name="url" required>
+            </div>
+
+            <div class="mb-3">
                 <label for="objavljen" class="form-label">Објављен:</label>
                 <select class="form-select" name="objavljen">
                     <option value="0" selected>Не</option>

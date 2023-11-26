@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('naziv', 128)->charset('utf8mb4')->collate('utf8mb4_unicode_ci');
             $table->text('opis')->nullable()->charset('utf8mb4')->collate('utf8mb4_unicode_ci');
+            $table->text('url')->nullable()->charset('utf8mb4')->collate('utf8mb4_unicode_ci');
             $table->boolean('objavljen')->default(0);
         });
     }

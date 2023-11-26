@@ -13,6 +13,7 @@
                     <thead>
                         <tr>
                             <th>Назив</th>
+                            <th>Линк</th>
                             <th>Измени</th>
                             <th>Објави</th>
                         </tr>
@@ -22,6 +23,9 @@
                             <tr>
                                 <td class="align-middle">
                                     {{ $alat->naziv }}
+                                </td>
+                                <td class="align-middle">
+                                    <a href="{{ $alat->url }}">{{ $alat->url }}</a>
                                 </td>
                                 <td style="width: 40px; height: 40px;" class="align-middle">
                                     <a href="{{ route('alat.izmeni', $alat->id) }}" class="btn btn-primary btn-sm py-1">

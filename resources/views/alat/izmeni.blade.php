@@ -14,7 +14,11 @@
                 <input type="text" required name="opis" class="form-control" value="{{ $alat->opis }}">
             </div>
             <input type="hidden" name="objavljen" value="{{ $alat->objavljen }}" readonly>
-            
+
+            <div class="mb-3">
+                <label for="naslov" class="form-label">Линк (*)</label>
+                <input type="text" required name="url" class="form-control" value="{{ $alat->url }}">
+            </div>
 
             <div class="mb-3">
                 <div class="row justify-content-center">
