@@ -127,4 +127,12 @@ class BlogController extends Controller
         $blog->save();
         return redirect(route('blog.list'));
     }
+
+    public function obrisi($id){
+        $blog= Blog::find($id);
+        if(!$blog) return abort(404);
+        $blog->komentari()->delete();
+        $blog->delete();
+        return redirect(route('blog.list'));
+    }
 }

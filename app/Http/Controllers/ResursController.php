@@ -84,4 +84,15 @@ class ResursController extends Controller
         $resurs->save();
         return redirect(route('resurs.list'));
     }
+    public function obrisi($id){
+        $resurs= Resurs::find($id);
+        if(!$resurs) return abort(404);
+        $resurs->fontovi->each(function ($font) {
+            $font->fajlovi()->delete();
+            $font->delete();
+        });
+        $resurs->video_tutorijali()->delete();
+        $resurs->delete();
+        return redirect(route('resurs.list'));
+    }
 }

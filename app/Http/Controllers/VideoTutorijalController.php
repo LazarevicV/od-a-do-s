@@ -33,7 +33,7 @@ class VideoTutorijalController extends Controller
     }
     
     public function izmeni($id){
-        $videoTutorijal=videoTutorijal::find($id);
+        $videoTutorijal=VideoTutorijal::find($id);
         if(!$videoTutorijal) return abort(404);
         return view('videoTutorijal.izmeni',[
             'videoTutorijal'=>$videoTutorijal,
@@ -42,7 +42,7 @@ class VideoTutorijalController extends Controller
     }
 
     public function izmeniSubmit(Request $request, $id){
-        $videoTutorijal=videoTutorijal::find($id);
+        $videoTutorijal=VideoTutorijal::find($id);
         if(!$videoTutorijal) return abort(404);
         $videoTutorijal->naziv= $request->input('naziv');
         $videoTutorijal->opis= $request->input('opis');
@@ -55,7 +55,7 @@ class VideoTutorijalController extends Controller
     }
     public function publish($id)
     {
-        $videoTutorijal=videoTutorijal::find($id);
+        $videoTutorijal=VideoTutorijal::find($id);
         if(!$videoTutorijal) return abort(404);
         $videoTutorijal->objavljen=1;
         $videoTutorijal->save();
@@ -64,10 +64,16 @@ class VideoTutorijalController extends Controller
 
     public function unpublish($id)
     {
-        $videoTutorijal=videoTutorijal::find($id);
+        $videoTutorijal=VideoTutorijal::find($id);
         if(!$videoTutorijal) return abort(404);
         $videoTutorijal->objavljen=0;
         $videoTutorijal->save();
+        return redirect(route('videoTutorijal.list'));
+    }
+    public function obrisi($id){
+        $font= VideoTutorijal::find($id);
+        if(!$font) return abort(404);
+        $font->delete();
         return redirect(route('videoTutorijal.list'));
     }
 }
