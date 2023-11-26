@@ -1,8 +1,3 @@
-## ############################################################################################ ##
-
-# Hakaton ćirilica - OD A DO Š - Tri praseta
-
-## ############################################################################################ ##
 
 # Inicijalno postavljanje projekta(sve što treba da se uradi pre nego se pokrene projekat)
 
