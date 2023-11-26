@@ -29,7 +29,7 @@ Route::get('/', function () {
     ]);
 })->name('pocetna');
 
-Route::get('/uputstva', function () {
+Route::get('/упутства', function () {
     $uputstva_blogovi = BlogController::uputstva();
 
     return view('blog.blogovi', [
@@ -48,144 +48,144 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/blogovi', [BlogController::class, 'blogovi'])->name('blog.blogovi');
+Route::get('/блогови', [BlogController::class, 'blogovi'])->name('blog.blogovi');
 
-Route::prefix('/blog')->group(function () {
+Route::prefix('/блог')->group(function () {
     Route::name('blog.')->group(function () {
         Route::controller(BlogController::class)->group(function () {
             Route::middleware('check_role:admin')->group(function () {
-                Route::get('/list', 'list')->name('list');
-                Route::get('/unesi', 'unesi')->name('unesi');
-                Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
-                Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
-                Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('/листа', 'list')->name('list');
+                Route::get('/унеси', 'unesi')->name('unesi');
+                Route::post('/унеси', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('/измени/{id}', 'izmeni')->name('izmeni');
+                Route::post('/измени/{id}', 'izmeniSubmit')->name('izmeniSubmit');
                 Route::get('/publish/{id}', 'publish')->name('publish');
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
-                Route::get('/istakni/{id}', 'istakni')->name('istakni');
-                Route::get('/obrisi_istakni/{id}', 'obrisi_istakni')->name('obrisi_istakni');
+                Route::get('/истакни/{id}', 'istakni')->name('istakni');
+                Route::get('/обриши=истакнути-блог/{id}', 'obrisi_istakni')->name('obrisi_istakni');
 
-                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+                Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
             });
 
-            Route::get('/kategorija/{kategorija}', 'kategorija')->name('kategorija');
+            Route::get('/категорија/{kategorija}', 'kategorija')->name('kategorija');
             Route::get('/{id}', 'blog')->name('blog');
         });
     });
 });
 
-Route::get('fontovi', [FontController::class, 'preview'])->name('fontovi');
+Route::get('/алати', [AlatController::class, 'alati'])->name('alat.alati');
 
-Route::get('alati', [AlatController::class, 'alati'])->name('alat.alati');
-
-Route::prefix('/alat/')->group(function () {
+Route::prefix('/алат/')->group(function () {
     Route::controller(AlatController::class)->group(function () {
         Route::name('alat.')->group(function () {
 
             Route::middleware('check_role:admin')->group(function () {
 
-                Route::get('list', 'list')->name('list');
+                Route::get('листа', 'list')->name('list');
 
-                Route::get('unesi', 'unesi')->name('unesi');
-                Route::post('unesi', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('унеси', 'unesi')->name('unesi');
+                Route::post('унеси', 'unesiSubmit')->name('unesiSubmit');
 
-                Route::get('izmeni/{id}', 'izmeni')->name('izmeni');
-                Route::post('izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('измени/{id}', 'izmeni')->name('izmeni');
+                Route::post('измени/{id}', 'izmeniSubmit')->name('izmeniSubmit');
 
                 Route::get('publish/{id}', 'publish')->name('publish');
                 Route::get('unpublish/{id}', 'unpublish')->name('unpublish');
 
-                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+                Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
             });
             Route::get('{id}', 'alat')->name('alat');
         });
     });
 });
 
-Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
+Route::get('/ресурси', [ResursController::class, 'resursi'])->name('resurs.resursi');
 
-Route::prefix('/resurs')->group(function () {
+Route::prefix('/ресурс')->group(function () {
     Route::controller(ResursController::class)->group(function () {
         Route::name('resurs.')->group(function () {
             Route::middleware('check_role:admin')->group(function () {
-                Route::get('/list', 'list')->name('list');
+                Route::get('/листа', 'list')->name('list');
 
-                Route::get('/unesi', 'unesi')->name('unesi');
-                Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('/унеси', 'unesi')->name('unesi');
+                Route::post('/унеси', 'unesiSubmit')->name('unesiSubmit');
 
-                Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
-                Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('/измени/{id}', 'izmeni')->name('izmeni');
+                Route::post('/измени/{id}', 'izmeniSubmit')->name('izmeniSubmit');
 
                 Route::get('/publish/{id}', 'publish')->name('publish');
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
 
-                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+                Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
             });
             Route::get('/{id}', 'resurs')->name('resurs');
         });
     });
 });
 
-Route::prefix('/komentar')->group(function () {
+Route::prefix('/коментар')->group(function () {
     Route::controller(KomentarController::class)->group(function () {
         Route::name('komentar.')->group(function () {
             Route::middleware('check_role:admin:user')->group(function () {
-                Route::post('/dodaj/{blog_id}', 'dodajSubmit')->name('dodajSubmit');
-                Route::get('/unpublish_korisnik/{id}', 'unpublishKorisnik')->name('unpublishKorisnik');
+                Route::post('/додај/{blog_id}', 'dodajSubmit')->name('dodajSubmit');
+                Route::get('/обриши-за-корисника/{id}', 'unpublishKorisnik')->name('unpublishKorisnik');
             });
 
             Route::middleware('check_role:admin')->group(function () {
-                Route::get('/list', 'list')->name('list');
+                Route::get('/листа', 'list')->name('list');
 
                 Route::get('/publish/{id}', 'publish')->name('publish');
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
 
-                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+                Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
             });
         });
     });
 });
 
-Route::prefix('/font')->group(function () {
+Route::get('/фонтови', [FontController::class, 'preview'])->name('fontovi');
+
+Route::prefix('/фонт')->group(function () {
     Route::controller(FontController::class)->group(function () {
         Route::name('font.')->group(function () {
 
             Route::middleware('check_role:admin')->group(function () {
-                Route::get('/list', 'list')->name('list');
+                Route::get('/листа', 'list')->name('list');
 
-                Route::get('/unesi', 'unesi')->name('unesi');
-                Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
-                Route::get('/unesifile/{font_id}', 'unesifile')->name('unesifile');
-                Route::post('/unesifile/{font_id}', 'unesifileSubmit')->name('unesifileSubmit');
+                Route::get('/унеси', 'unesi')->name('unesi');
+                Route::post('/унеси', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('/унеси-датотеку/{font_id}', 'unesifile')->name('unesifile');
+                Route::post('/унеси-датотеку/{font_id}', 'unesifileSubmit')->name('unesifileSubmit');
 
-                Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
-                Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('/измени/{id}', 'izmeni')->name('izmeni');
+                Route::post('/измени/{id}', 'izmeniSubmit')->name('izmeniSubmit');
 
                 Route::get('/publish/{id}', 'publish')->name('publish');
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
 
-                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+                Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
             });
         });
     });
 });
 
-Route::prefix('/video_tutorijal')->group(function () {
+Route::prefix('/видео-упутство')->group(function () {
     Route::controller(VideoTutorijalController::class)->group(function () {
         Route::name('videoTutorijal.')->group(function () {
 
             Route::middleware('check_role:admin')->group(function () {
-                Route::get('/list', 'list')->name('list');
+                Route::get('/листа', 'list')->name('list');
 
-                Route::get('/unesi', 'unesi')->name('unesi');
-                Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('/унеси', 'unesi')->name('unesi');
+                Route::post('/унеси', 'unesiSubmit')->name('unesiSubmit');
 
-                Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
-                Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('/измени/{id}', 'izmeni')->name('izmeni');
+                Route::post('/измени/{id}', 'izmeniSubmit')->name('izmeniSubmit');
 
                 Route::get('/publish/{id}', 'publish')->name('publish');
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
 
-                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+                Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
             });
         });
     });
