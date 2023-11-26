@@ -2,15 +2,16 @@
 @section('content')
 
 <div class="container my-5 col-6">
+    <h1>{{$title}}</h1>
     <form action="{{ route('blog.unesiSubmit') }}" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="naslov" class="form-label">Naslov:</label>
+            <label for="naslov" class="form-label">Наслов:</label>
             <input type="text" class="form-control" name="naslov" required>
         </div>
 
         <div class="mb-3">
-            <label for="sadrzaj" class="form-label">Sadržaj:</label>
+            <label for="sadrzaj" class="form-label">Садржај:</label>
             <textarea id="editor" name="sadrzaj" required></textarea>
         </div>
 
@@ -42,10 +43,8 @@
 
             <div class="mb-3">
                 <div class="row justify-content-center">
-                    <button class="col-3 mx-1 btn btn-primary">
-                        Сачувај
-                    </button>
-                    <a href="{{route('blog.list')}}" class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">Откажи</a>
+                    <button type="submit" class="col-2 mx-1 btn btn-primary">Унеси</button>
+                    <a href="{{route('blog.list')}}" class="col-2 mx-1 btn btn-link" style="border: 1px solid #214252;">Откажи</a>
                 </div>
             </div>
         </form>

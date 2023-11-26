@@ -70,7 +70,14 @@
 											<li><a href="{{route('uputstva')}}">Инфо</a></li>
 										</ul>
 									</li>
-									<li><a href="{{route('resurs.resurs', 1)}}">Дизајн</a></li>
+									<li class="has-children">
+										<a href="{{route('resurs.resursi')}}">Ресурси</a>
+										<ul class="dropdown">
+											<li><a href="{{route('resurs.resurs', 1)}}">База фонтова</a></li>
+											<li><a href="{{route('resurs.resurs', 2)}}">Видео туторијали</a></li>
+										</ul>
+									</li>
+
 									<li><a href="{{route('blog.blogovi')}}">Магазин</a></li>
 									<li><a href="#">Заједница</a></li>
 
