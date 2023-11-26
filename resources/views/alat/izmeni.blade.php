@@ -1,6 +1,7 @@
 @extends('layouts.public')
 @section('content')
     <div class="container mt-5 col-4">
+        <h1>{{$title}}</h1>
         <form method="POST" action="{{ route('alat.izmeniSubmit', $alat->id) }}">
             @csrf
             <div class="mb-3">
@@ -9,7 +10,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="sadrzaj" class="form-label">Опис (*)</label>
+                <label for="opis" class="form-label">Опис (*)</label>
                 <input type="text" required name="opis" class="form-control" value="{{ $alat->opis }}">
             </div>
             <input type="hidden" name="objavljen" value="{{ $alat->objavljen }}">

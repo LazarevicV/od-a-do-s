@@ -2,6 +2,7 @@
 @section('content')
 
     <div class="container my-5 col-4">
+        <h1>{{$title}}</h1>
         <form action="{{ route('blog.unesiSubmit') }}" method="POST">
             @csrf
             <div class="mb-3">

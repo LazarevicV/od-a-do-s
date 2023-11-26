@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('css/flatpickr.min.css') }}">
 
 
-	<title>Од А до Ш</title>
+	<title>{{$title}}</title>
 </head>
 <body>
 
@@ -70,7 +70,7 @@
 								<li><a href="category.html">Дизајн</a></li>
 								<li><a href="category.html">Магазин</a></li>
 								<li><a href="category.html">Заједница</a></li>
-                                <li><a href="{{route('login')}}">Логин</a></li>
+                                <li><a href="{{route('login')}}">Пријави се</a></li>
 							</ul>
 						</div>
 						{{-- <div class="col-2 text-end">

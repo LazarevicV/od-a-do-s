@@ -2,6 +2,7 @@
 @section('content')
 
     <div class="container mt-5 col-4">
+        <h1>{{$title}}</h1>
         <form method="POST" action="{{ route('blog.izmeniSubmit', $blog->id) }}">
             @csrf
             <div class="mb-3">

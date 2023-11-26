@@ -1,6 +1,7 @@
 @extends('layouts.public')
 @section('content')
     <div class="container my-5 col-4">
+        <h1>{{$title}}</h1>
         <form action="{{ route('alat.unesiSubmit') }}" method="POST">
             @csrf
             <div class="mb-3">
