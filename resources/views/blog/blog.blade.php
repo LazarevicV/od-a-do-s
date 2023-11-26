@@ -40,7 +40,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex flex-row">
                                     <h5 class="mr-2 d-flex align-items-center">
-                                        {{ $komentar->user->nickname }}
+                                        {{ $komentar->user->ime_prezime }}
                                         <span class="ml-2">&nbsp;|&nbsp;</span>
                                         <span style="font-size: 12px;"> {{ $komentar->created_at}}</span>
                                     </h5>

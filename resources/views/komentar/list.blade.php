@@ -9,7 +9,7 @@
                 <table id="tabela" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Алијас аутора</th>
+                            <th>Име и презиме</th>
                             <th>Садржај</th>
                             <th>Наслов блога</th>
                             <th>Објави</th>
@@ -20,7 +20,7 @@
                         @foreach ($komentari as $komentar)
                             <tr>
                                 <td class="align-middle" style="width:160px">
-                                    {{ $komentar->user->nickname }}
+                                    {{ $komentar->user->ime_prezime }}
                                 </td>
                                 <td class="align-middle">
                                     {{ $komentar->sadrzaj }}
