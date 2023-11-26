@@ -44,7 +44,7 @@ class ResursController extends Controller
         $resurs->objavljen= $request->input('objavljen');
         $resurs->save();
 
-        return redirect(route('resurs.list'))->with('info','Запис је унет');
+        return redirect(route('resurs.list'))->with('info','Запис је унет.');
     }
 
     public function izmeni($id){
@@ -65,7 +65,7 @@ class ResursController extends Controller
         $resurs->objavljen= $request->input('objavljen');
         $resurs->save();
 
-        return redirect(route('resurs.list'));
+        return redirect(route('resurs.list'))->with('info','Запис је измењен.');
     }
     public function publish($id)
     {

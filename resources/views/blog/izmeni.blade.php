@@ -25,8 +25,8 @@
                 <input type="text" class="form-control" name="slika" value="{{ $blog->slika }}">
             </div>
 
-            <input type="hidden" name="objavljen" value="{{ $blog->objavljen }}">
-            <input type="hidden" name="istaknut" value="{{ $blog->istaknut }}">
+            <input type="hidden" name="objavljen" value="{{ $blog->objavljen }}" readonly>
+            <input type="hidden" name="istaknut" value="{{ $blog->istaknut }}" readonly>
 
             <div class="mb-3">
                 <div class="row justify-content-center">

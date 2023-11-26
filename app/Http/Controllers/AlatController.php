@@ -44,7 +44,7 @@ class AlatController extends Controller
         $alat->objavljen= $request->input('objavljen');
         $alat->save();
 
-        return redirect(route('alat.list'))->with('info','Запис је унет');
+        return redirect(route('alat.list'))->with('info','Запис је унет.');
     }
 
     public function izmeni($id){
@@ -65,7 +65,7 @@ class AlatController extends Controller
         $alat->objavljen= $request->input('objavljen');
         $alat->save();
 
-        return redirect(route('alat.list'));
+        return redirect(route('alat.list'))->with('info','Запис је измењен.');
     }
     public function publish($id)
     {

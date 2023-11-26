@@ -30,7 +30,7 @@ class FontController extends Controller
         $font->resurs_id= $request->input('resurs_id');
         $font->save();
         
-        return redirect(route('font.list'))->with('info','Запис је унет');
+        return redirect(route('font.list'))->with('info','Запис је унет.');
     }
     public function unesifile($font_id){
         $font=Font::find($font_id);
@@ -47,7 +47,7 @@ class FontController extends Controller
         $file->font_id= $request->input('font_id');
         $file->save();
         
-        return redirect(route('font.list'))->with('info','Запис је унет');
+        return redirect(route('font.list'))->with('info','Запис је унет.');
     }
     
     public function izmeni($id){
@@ -70,7 +70,7 @@ class FontController extends Controller
         $font->resurs_id= $request->input('resurs_id');
         $font->save();
 
-        return redirect(route('font.list'));
+        return redirect(route('font.list'))->with('info','Запис је измењен.');;
     }
     public function publish($id)
     {
