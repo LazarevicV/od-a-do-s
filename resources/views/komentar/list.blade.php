@@ -11,7 +11,9 @@
                         <tr>
                             <th>Алијас аутора</th>
                             <th>Садржај</th>
+                            <th>Наслов блога</th>
                             <th>Објави</th>
+                            <th>Обриши</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,6 +24,9 @@
                                 </td>
                                 <td class="align-middle">
                                     {{ $komentar->sadrzaj }}
+                                </td>
+                                <td class="align-middle" style="width:200px">
+                                    {{ $komentar->blog->naslov }}
                                 </td>
                                 @if ($komentar->objavljen)
                                     <td style="width: 40px; height: 40px;" class="align-middle">
@@ -36,6 +41,11 @@
                                         </a>
                                     </td>
                                 @endif
+                                <td style="width: 40px; height: 40px;" class="align-middle">
+                                    <a href="{{ route('komentar.obrisi', $komentar->id) }}" class="btn btn-danger btn-sm py-1">
+                                        <span class="bi bi-trash" style="font-size: 1.2em;"></span>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

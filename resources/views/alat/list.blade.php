@@ -5,7 +5,7 @@
             <div class="col-8 offset-2">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1>{{ $title }}</h1>
-                    <a href="{{ route('resurs.unesi') }}" class="btn btn-primary btn-sm p-2">
+                    <a href="{{ route('alat.unesi') }}" class="btn btn-primary btn-sm p-2">
                         Додај
                     </a>
                 </div>

@@ -42,4 +42,13 @@ class KomentarController extends Controller
         $komentar->save();
         return redirect(route('komentar.list'));
     }
+    public function obrisi($id){
+        $komentar= Komentar::find($id);
+        if(!$komentar) return abort(404);
+        $komentar->user()->dissociate();
+        $komentar->blog()->dissociate();
+        $komentar->delete();
+
+        return redirect(route('komentar.list'));
+    }
 }

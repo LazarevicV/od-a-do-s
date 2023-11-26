@@ -42,8 +42,6 @@ Route::prefix('/blog')->group(function () {
     Route::name('blog.')->group(function () {
         Route::controller(BlogController::class)->group(function () {
 
-
-
             Route::get('/', 'list')->name('index');
             Route::get('/list', 'list')->name('list');
 
@@ -60,7 +58,6 @@ Route::prefix('/blog')->group(function () {
 
             Route::get('/istakni/{id}', 'istakni')->name('istakni');
             Route::get('/obrisi_istakni/{id}', 'obrisi_istakni')->name('obrisi_istakni');
-
 
             Route::get('/{id}', 'blog')->name('blog');
         });
@@ -123,6 +120,8 @@ Route::prefix('/komentar')->group(function () {
 
             Route::get('/publish/{id}', 'publish')->name('publish');
             Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+
+            Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
         });
     });
 });
