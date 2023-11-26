@@ -1,12 +1,12 @@
 @extends('layouts.public')
 @section('content')
-    <div class="container mt-5 col-7 mb-5">
-        <h1>{{$title}}</h1>
+    <div class="container mt-5 col-8 mb-5">
+        <h1>{{$title}} <a href="{{route('fontovi')}}" class="btn btn-primary p-2">Приказ свих фонтова</a></h1> 
         @if (!empty($resurs->fontovi[0]))
             @foreach ($resurs->fontovi as $font)
                 @if ($font->objavljen)
                     <hr>
-                    <h4>{{$font->naziv}}</h4>
+                    <h4>{{$font->naziv}} </h4>
                     <p>{{$font->opis}}</p>
                     @if (!empty($font->link_detaljno))
                         <a href="{{$font->link_detaljno}}" target="_blank">Детаљније о фонту.</a>
