@@ -7,6 +7,7 @@ use App\Http\Controllers\AlatController;
 use App\Http\Controllers\FontController;
 use App\Http\Controllers\ResursController;
 use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\VideoTutorijalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +53,6 @@ Route::prefix('/blog')->group(function () {
     Route::name('blog.')->group(function () {
         Route::controller(BlogController::class)->group(function () {
             Route::middleware('check_role:admin')->group(function () {
-                Route::get('/', 'list')->name('index');
                 Route::get('/list', 'list')->name('list');
                 Route::get('/unesi', 'unesi')->name('unesi');
                 Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
@@ -141,22 +141,43 @@ Route::prefix('/komentar')->group(function () {
 Route::prefix('/font')->group(function () {
     Route::controller(FontController::class)->group(function () {
         Route::name('font.')->group(function () {
-            Route::get('/', 'list')->name('index');
-            Route::get('/list', 'list')->name('list');
 
-            Route::get('/unesi', 'unesi')->name('unesi');
-            Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
-            Route::get('/unesifile/{font_id}', 'unesifile')->name('unesifile');
-            Route::post('/unesifile/{font_id}', 'unesifileSubmit')->name('unesifileSubmit');
+            Route::middleware('check_role:admin')->group(function () {
+                Route::get('/list', 'list')->name('list');
 
-            Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
-            Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('/unesi', 'unesi')->name('unesi');
+                Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('/unesifile/{font_id}', 'unesifile')->name('unesifile');
+                Route::post('/unesifile/{font_id}', 'unesifileSubmit')->name('unesifileSubmit');
 
-            Route::get('/publish/{id}', 'publish')->name('publish');
-            Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+                Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
+                Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+
+                Route::get('/publish/{id}', 'publish')->name('publish');
+                Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+            });
         });
     });
 });
 
+Route::prefix('/video_tutorijal')->group(function () {
+    Route::controller(VideoTutorijalController::class)->group(function () {
+        Route::name('videoTutorijal.')->group(function () {
+
+            Route::middleware('check_role:admin')->group(function () {
+                Route::get('/list', 'list')->name('list');
+
+                Route::get('/unesi', 'unesi')->name('unesi');
+                Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+
+                Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
+                Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+
+                Route::get('/publish/{id}', 'publish')->name('publish');
+                Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+            });
+        });
+    });
+});
 
 require __DIR__ . '/auth.php';
