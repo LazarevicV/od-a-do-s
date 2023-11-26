@@ -12,8 +12,8 @@ class Komentar extends Model
     {
         return $this->belongsTo(Blog::class);
     }
-    public function korisnik()
+    public function user()
     {
-        return $this->belongsTo(Korisnik::class);
+        return $this->belongsTo(User::class);
     }
 }

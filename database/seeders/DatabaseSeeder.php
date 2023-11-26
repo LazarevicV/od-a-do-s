@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             'naslov' => 'Primer bloga 1',
             'sadrzaj' => 'Ovo je sadržaj bloga 1',
             'kategorija' => 'Tehnologija',
-            'slika' => 'slika1.jpg',
+            'slika' => 'azbuka.png',
             'objavljen' => true,
             'istaknut' => true,
         ]);
@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
             'naslov' => 'Primer bloga 2',
             'sadrzaj' => 'Ovo je sadržaj bloga 2',
             'kategorija' => 'Recepti',
-            'slika' => 'slika2.jpg',
+            'slika' => 'logo.png',
             'objavljen' => false,
             'istaknut' => false,
         ]);
