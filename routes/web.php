@@ -41,24 +41,20 @@ Route::get('/blogovi', [BlogController::class, 'blogovi'])->name('blog.blogovi')
 Route::prefix('/blog')->group(function () {
     Route::name('blog.')->group(function () {
         Route::controller(BlogController::class)->group(function () {
-
-            Route::get('/', 'list')->name('index');
-            Route::get('/list', 'list')->name('list');
+            Route::middleware('check_role:admin')->group(function () {
+                Route::get('/', 'list')->name('index');
+                Route::get('/list', 'list')->name('list');
+                Route::get('/unesi', 'unesi')->name('unesi');
+                Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
+                Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('/publish/{id}', 'publish')->name('publish');
+                Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+                Route::get('/istakni/{id}', 'istakni')->name('istakni');
+                Route::get('/obrisi_istakni/{id}', 'obrisi_istakni')->name('obrisi_istakni');
+            });
 
             Route::get('/kategorija/{kategorija}', 'kategorija')->name('kategorija');
-
-            Route::get('/unesi', 'unesi')->name('unesi');
-            Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
-
-            Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
-            Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
-
-            Route::get('/publish/{id}', 'publish')->name('publish');
-            Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
-
-            Route::get('/istakni/{id}', 'istakni')->name('istakni');
-            Route::get('/obrisi_istakni/{id}', 'obrisi_istakni')->name('obrisi_istakni');
-
             Route::get('/{id}', 'blog')->name('blog');
         });
     });
@@ -70,17 +66,19 @@ Route::prefix('/alat/')->group(function () {
     Route::controller(AlatController::class)->group(function () {
         Route::name('alat.')->group(function () {
 
-            Route::get('', 'list')->name('index');
-            Route::get('list', 'list')->name('list');
+            Route::middleware('check_role:admin')->group(function () {
 
-            Route::get('unesi', 'unesi')->name('unesi');
-            Route::post('unesi', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('list', 'list')->name('list');
 
-            Route::get('izmeni/{id}', 'izmeni')->name('izmeni');
-            Route::post('izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+                Route::get('unesi', 'unesi')->name('unesi');
+                Route::post('unesi', 'unesiSubmit')->name('unesiSubmit');
 
-            Route::get('publish/{id}', 'publish')->name('publish');
-            Route::get('unpublish/{id}', 'unpublish')->name('unpublish');
+                Route::get('izmeni/{id}', 'izmeni')->name('izmeni');
+                Route::post('izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+
+                Route::get('publish/{id}', 'publish')->name('publish');
+                Route::get('unpublish/{id}', 'unpublish')->name('unpublish');
+            });
             Route::get('{id}', 'alat')->name('alat');
         });
     });
@@ -91,18 +89,18 @@ Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resur
 Route::prefix('/resurs')->group(function () {
     Route::controller(ResursController::class)->group(function () {
         Route::name('resurs.')->group(function () {
+            Route::middleware('check_role:admin')->group(function () {
+                Route::get('/list', 'list')->name('list');
 
-            Route::get('/', 'list')->name('index');
-            Route::get('/list', 'list')->name('list');
+                Route::get('/unesi', 'unesi')->name('unesi');
+                Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
 
-            Route::get('/unesi', 'unesi')->name('unesi');
-            Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+                Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
+                Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
 
-            Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
-            Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
-
-            Route::get('/publish/{id}', 'publish')->name('publish');
-            Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+                Route::get('/publish/{id}', 'publish')->name('publish');
+                Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+            });
             Route::get('/{id}', 'resurs')->name('resurs');
         });
     });
@@ -111,15 +109,18 @@ Route::prefix('/resurs')->group(function () {
 Route::prefix('/komentar')->group(function () {
     Route::controller(KomentarController::class)->group(function () {
         Route::name('komentar.')->group(function () {
-            Route::get('/', 'list')->name('index');
-            Route::get('/list', 'list')->name('list');
+            Route::middleware('check_role:admin:user')->group(function () {
+                Route::post('/dodaj/{blog_id}', 'dodajSubmit')->name('dodajSubmit');
+            });
 
-            Route::post('/dodaj/{blog_id}', 'dodajSubmit')->name('dodajSubmit');
+            Route::middleware('check_role:admin')->group(function () {
+                Route::get('/list', 'list')->name('list');
 
-            Route::get('/publish/{id}', 'publish')->name('publish');
-            Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+                Route::get('/publish/{id}', 'publish')->name('publish');
+                Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
 
-            Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+            });
         });
     });
 });
