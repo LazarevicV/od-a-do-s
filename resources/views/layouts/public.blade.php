@@ -70,9 +70,9 @@
 											<li><a href="{{route('uputstva')}}">Инфо</a></li>
 										</ul>
 									</li>
-									<li><a href="category.html">Дизајн</a></li>
-									<li><a href="category.html">Магазин</a></li>
-									<li><a href="{{route('blog.blogovi')}}">Заједница</a></li>
+									<li><a href="{{route('resurs.resurs', 1)}}">Дизајн</a></li>
+									<li><a href="{{route('blog.blogovi')}}">Магазин</a></li>
+									<li><a href="#">Заједница</a></li>
 
 									@if (Auth::check())               
 									<li><a href="{{route('profile.edit')}}">Профил</a></li>
