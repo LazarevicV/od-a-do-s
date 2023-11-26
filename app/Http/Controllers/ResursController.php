@@ -14,6 +14,7 @@ class ResursController extends Controller
             'title'=>'Ресурси'
         ]);
     }
+    
 
     public function resurs($id){
         $resurs=Resurs::find($id);
@@ -40,7 +41,6 @@ class ResursController extends Controller
         $resurs= new Resurs();
         $resurs->naziv= $request->input('naziv');
         $resurs->opis= $request->input('opis');
-        $resurs->link= $request->input('link');
         $resurs->objavljen= $request->input('objavljen');
         $resurs->save();
         
@@ -62,7 +62,6 @@ class ResursController extends Controller
 
         $resurs->naziv= $request->input('naziv');
         $resurs->opis= $request->input('opis');
-        $resurs->link= $request->input('link');
         $resurs->objavljen= $request->input('objavljen');
         $resurs->save();
 

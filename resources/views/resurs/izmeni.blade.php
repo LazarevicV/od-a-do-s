@@ -13,11 +13,7 @@
                 <label for="opis" class="form-label">Опис (*)</label>
                 <input type="text" required name="opis" class="form-control" value="{{ $resurs->opis }}">
             </div>
-
-            <div class="mb-3">
-                <label for="link" class="form-label">Линк ка ресурсу (*)</label>
-                <input type="text" required name="link" class="form-control" value="{{ $resurs->link }}">
-            </div>
+            
             <input type="hidden" name="objavljen" value="{{ $resurs->objavljen }}">
 
             <div class="mb-3">
@@ -25,9 +21,7 @@
                     <button class="col-3 mx-1 btn btn-primary">
                         Сачувај
                     </button>
-                    <button class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">
-                        <a href="{{route('resurs.list')}}">Откажи</a>
-                    </button>
+                    <a href="{{route('resurs.list')}}" class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">Откажи</a>
                 </div>
             </div>
         </form>

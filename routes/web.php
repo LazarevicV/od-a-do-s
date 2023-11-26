@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AlatController;
+use App\Http\Controllers\FontController;
 use App\Http\Controllers\ResursController;
 use App\Http\Controllers\KomentarController;
 
@@ -95,9 +96,7 @@ Route::prefix('/alat/')->group(function () {
     });
 });
 
-Route::middleware('check_role:admin:user',)->group(function () {
-    Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
-});
+Route::get('/resursi', [ResursController::class, 'resursi'])->name('resurs.resursi');
 
 Route::prefix('/resurs')->group(function () {
     Route::controller(ResursController::class)->group(function () {
@@ -131,6 +130,26 @@ Route::prefix('/komentar')->group(function () {
             Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
 
             Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+        });
+    });
+});
+
+Route::prefix('/font')->group(function () {
+    Route::controller(FontController::class)->group(function () {
+        Route::name('font.')->group(function () {
+            Route::get('/', 'list')->name('index');
+            Route::get('/list', 'list')->name('list');
+
+            Route::get('/unesi', 'unesi')->name('unesi');
+            Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+            Route::get('/unesifile/{font_id}', 'unesifile')->name('unesifile');
+            Route::post('/unesifile/{font_id}', 'unesifileSubmit')->name('unesifileSubmit');
+
+            Route::get('/izmeni/{id}', 'izmeni')->name('izmeni');
+            Route::post('/izmeni/{id}', 'izmeniSubmit')->name('izmeniSubmit');
+
+            Route::get('/publish/{id}', 'publish')->name('publish');
+            Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
         });
     });
 });
