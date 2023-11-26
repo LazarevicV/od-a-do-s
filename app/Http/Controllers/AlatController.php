@@ -16,12 +16,13 @@ class AlatController extends Controller
     }
     public function alat($id){
         $alat=Alat::find($id);
+        if(!$alat) return abort(404);
         return view('alat.alat', [
             'alat'=>$alat,
             'title'=>$alat->naziv
         ]);
     }
-    
+
     //crud metode
     public function list(){
         $alati=Alat::all();
@@ -42,10 +43,10 @@ class AlatController extends Controller
         $alat->opis= $request->input('opis');
         $alat->objavljen= $request->input('objavljen');
         $alat->save();
-        
+
         return redirect(route('alat.list'))->with('info','Запис је унет');
     }
-    
+
     public function izmeni($id){
         $alat=Alat::find($id);
         if(!$alat) return abort(404);
