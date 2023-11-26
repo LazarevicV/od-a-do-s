@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Alat;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class AlatSeeder extends Seeder
@@ -15,7 +14,7 @@ class AlatSeeder extends Seeder
     {
         $a = new Alat();
         $a->naziv = 'Translate WordPress with GTranslate';
-        $a->opis = "Преведи WordPress помоћу Google Translate мултијезичког додатка како бисте направили ваш веб сајт вишејезичким. Потпуна вишејезичка решења за WordPress.";
+        $a->opis = 'Преведи WordPress помоћу Google Translate мултијезичког додатка како бисте направили ваш веб сајт вишејезичким. Потпуна вишејезичка решења за WordPress.';
         $a->url = 'https://wordpress.org/plugins/gtranslate/';
         $a->objavljen = true;
         $a->save();

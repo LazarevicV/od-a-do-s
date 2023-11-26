@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AlatController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FontController;
-use App\Http\Controllers\ResursController;
 use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ResursController;
 use App\Http\Controllers\VideoTutorijalController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,20 +22,21 @@ use App\Http\Controllers\VideoTutorijalController;
 
 Route::get('/', function () {
     $istaknuti_blogovi = BlogController::istaknuti();
+
     return view('pocetna', [
         'istaknuti_blogovi' => $istaknuti_blogovi,
-        'title' => 'Почетна страница'
+        'title' => 'Почетна страница',
     ]);
 })->name('pocetna');
 
 Route::get('/uputstva', function () {
     $uputstva_blogovi = BlogController::uputstva();
+
     return view('blog.blogovi', [
         'blogovi' => $uputstva_blogovi,
-        'title' => 'Упутства'
+        'title' => 'Упутства',
     ]);
 })->name('uputstva');
-
 
 Route::get('/dashboard', function () {
     return redirect()->route('pocetna');
@@ -72,7 +73,7 @@ Route::prefix('/blog')->group(function () {
     });
 });
 
-Route::get('fontovi', [FontController::class,'preview'])->name('fontovi');
+Route::get('fontovi', [FontController::class, 'preview'])->name('fontovi');
 
 Route::get('alati', [AlatController::class, 'alati'])->name('alat.alati');
 
@@ -190,4 +191,4 @@ Route::prefix('/video_tutorijal')->group(function () {
     });
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
