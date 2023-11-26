@@ -23,9 +23,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Унеси</button>
-            <button class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">
-                <a href="{{route('alat.list')}}">Откажи</a>
-            </button>
+            <a href="{{route('alat.list')}}" class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">Откажи</a>
         </form>
     </div>
 @endsection

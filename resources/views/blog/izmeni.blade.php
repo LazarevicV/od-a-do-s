@@ -33,9 +33,7 @@
                     <button class="col-3 mx-1 btn btn-primary">
                         Сачувај
                     </button>
-                    <button class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">
-                        <a href="{{route('blog.list')}}">Откажи</a>
-                    </button>
+                    <a href="{{route('blog.list')}}" class="col-3 mx-1 btn btn-link" style="border: 1px solid #214252;">Откажи</a>
                 </div>
             </div>
         </form>

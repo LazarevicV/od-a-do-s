@@ -38,6 +38,11 @@ class BlogController extends Controller
         return $blogovi;
     }
 
+    public static function uputstva(){
+        $blogovi=Blog::where('kategorija', 'Упутства')->where('objavljen', 1)->get();
+        return $blogovi;
+    }
+
     //crud metode
     public function list(){
         $blogovi=Blog::all();
