@@ -316,13 +316,14 @@ select {
 button,
 [type="button"],
 [type="reset"],
-[type="submit"] {
+[type="submit"] 
+/* {
   -webkit-appearance: button; }
   button:not(:disabled),
   [type="button"]:not(:disabled),
   [type="reset"]:not(:disabled),
   [type="submit"]:not(:disabled) {
-    cursor: pointer; }
+    cursor: pointer; } */
 
 ::-moz-focus-inner {
   padding: 0;
@@ -364,7 +365,8 @@ legend {
 
 [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: textfield; }
+  /* -webkit-appearance: textfield;  */
+}
 
 /* rtl:raw:
 [type="tel"],
@@ -2047,7 +2049,7 @@ textarea.form-control-lg {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-print-color-adjust: exact;
+  /* -webkit-print-color-adjust: exact; */
   color-adjust: exact; }
   .form-check-input[type="checkbox"] {
     border-radius: 0.25em; }
@@ -9310,7 +9312,7 @@ textarea.form-control-lg {
         transform: translateY(-50%);
         font-family: 'icomoon'; }
     .site-nav .site-navigation .site-menu .has-children .dropdown {
-      width: 150px;
+      width: 170px;
       visibility: hidden;
       opacity: 0;
       top: 100%;
@@ -9633,14 +9635,14 @@ textarea.form-control-lg {
   top: 40%; }
 
 .burger.active:before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
+  /* -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg); */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=5);
   /*for IE*/ }
 
 .burger.active:after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
+  /* -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg); */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-5);
   /*for IE*/ }
 
@@ -9652,7 +9654,7 @@ body {
   font-weight: 400;
   font-size: 15px;
   overflow-x: hidden;
-  color: #43494d
+  color: #43494d;
   position: relative; }
   body:before {
     content: "";
@@ -10138,7 +10140,7 @@ textarea {
   .tags li {
     padding: 0;
     margin: 0 4px 4px 0;
-    float: left;
+    /* float: left; */
     display: inline-block; }
     .tags li a {
       float: left;
