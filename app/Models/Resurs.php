@@ -12,4 +12,8 @@ class Resurs extends Model
     {
         return $this->hasMany(Font::class);
     }
+    public function video_tutorijali()
+    {
+        return $this->hasMany(VideoTutorijal::class);
+    }
 }

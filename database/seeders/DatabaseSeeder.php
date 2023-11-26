@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             ResursSeeder::class,
             FontSeeder::class,
             FileSeeder::class,
+            VideoTutorijalSeeder::class,
         ]);
 
         // Seed podaci za blogove
