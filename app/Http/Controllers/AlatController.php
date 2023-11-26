@@ -86,4 +86,10 @@ class AlatController extends Controller
         $alat->save();
         return redirect(route('alat.list'));
     }
+    public function obrisi($id){
+        $alat= Alat::find($id);
+        if(!$alat) return abort(404);
+        $alat->delete();
+        return redirect(route('alat.list'));
+    }
 }

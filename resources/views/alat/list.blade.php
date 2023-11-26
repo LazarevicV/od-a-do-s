@@ -16,6 +16,7 @@
                             <th>Линк</th>
                             <th>Измени</th>
                             <th>Објави</th>
+                            <th>Обриши</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +46,11 @@
                                         </a>
                                     </td>
                                 @endif
+                                <td style="width: 40px; height: 40px;" class="align-middle">
+                                    <a href="{{ route('alat.obrisi', $alat->id) }}" class="btn btn-danger btn-sm py-1">
+                                        <span class="bi bi-trash" style="font-size: 1.2em;"></span>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -97,4 +97,12 @@ class FontController extends Controller
 
         return view('fontovi', compact('fonts', 'message'), ['title'=>'Fontovi']);
     }
+
+    public function obrisi($id){
+        $font= Font::find($id);
+        if(!$font) return abort(404);
+        $font->fajlovi()->delete();
+        $font->delete();
+        return redirect(route('font.list'));
+    }
 }

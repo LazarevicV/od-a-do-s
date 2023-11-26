@@ -63,6 +63,8 @@ Route::prefix('/blog')->group(function () {
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
                 Route::get('/istakni/{id}', 'istakni')->name('istakni');
                 Route::get('/obrisi_istakni/{id}', 'obrisi_istakni')->name('obrisi_istakni');
+
+                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
             });
 
             Route::get('/kategorija/{kategorija}', 'kategorija')->name('kategorija');
@@ -91,6 +93,8 @@ Route::prefix('/alat/')->group(function () {
 
                 Route::get('publish/{id}', 'publish')->name('publish');
                 Route::get('unpublish/{id}', 'unpublish')->name('unpublish');
+
+                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
             });
             Route::get('{id}', 'alat')->name('alat');
         });
@@ -113,6 +117,8 @@ Route::prefix('/resurs')->group(function () {
 
                 Route::get('/publish/{id}', 'publish')->name('publish');
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+
+                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
             });
             Route::get('/{id}', 'resurs')->name('resurs');
         });
@@ -156,6 +162,8 @@ Route::prefix('/font')->group(function () {
 
                 Route::get('/publish/{id}', 'publish')->name('publish');
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+
+                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
             });
         });
     });
@@ -176,6 +184,8 @@ Route::prefix('/video_tutorijal')->group(function () {
 
                 Route::get('/publish/{id}', 'publish')->name('publish');
                 Route::get('/unpublish/{id}', 'unpublish')->name('unpublish');
+
+                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
             });
         });
     });
