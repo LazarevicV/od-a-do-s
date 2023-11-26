@@ -4,8 +4,8 @@
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Име')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input-label for="ime_prezime" :value="__('Име')" />
+            <x-text-input id="name" class="block mt-1 w-full" type="text" name="ime_prezime" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
