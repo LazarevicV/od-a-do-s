@@ -36,6 +36,18 @@ class FileSeeder extends Seeder
             ['naziv'=> 'Optina-woff2.zip', 'font_id'=> 5],
 
             ['naziv'=> 'Optina-VF.zip', 'font_id'=> 5],
+            
+            ['naziv'=> 'Dijakritika-otf.zip', 'font_id'=> 6],
+
+            ['naziv'=> 'Dijakritika-woff2.zip', 'font_id'=> 6],
+
+            ['naziv'=> 'NocturnoBG.zip', 'font_id'=> 7],
+
+            ['naziv'=> 'Resavska BG OTF.zip', 'font_id'=> 8],
+
+            ['naziv'=> 'Adamant BG OTF.zip', 'font_id'=> 9],
+
+            ['naziv'=> 'Adamant BG TTF.zip', 'font_id'=> 9],
         ]);
     }
 }
