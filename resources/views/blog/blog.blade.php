@@ -10,7 +10,7 @@
                 <img src="{{ asset('img/' . $blog->slika) }}" class="img-fluid rounded" alt="{{ $blog->naslov }}" style="max-width: 70%;">
             </div>
             <p class="mt-3" style="font-size: 14px">Категорија: {{ $blog->kategorija }}</p>
-            <p style="font-size: 20px">{{ $blog->sadrzaj }}</p>
+            <p style="font-size: 20px">{!! $blog->sadrzaj !!}</p>
             <br>
             <hr>
             <br>
