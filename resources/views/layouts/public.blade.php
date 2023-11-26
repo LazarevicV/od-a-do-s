@@ -50,8 +50,9 @@
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
 						<div class="col-3 d-flex align-items-center">
-							{{-- Add a route for the image --}}
-							<img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid">
+							<a href="{{route('pocetna')}}">
+								<img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid">
+							</a>
 						</div>
 
 						<div class="col-9 text-center">
@@ -60,19 +61,39 @@
 								<span class="bi-search"></span>
 							</form>
 
-							<ul class="col-6 js-clone-nav text-start site-menu mx-auto d-flex justify-content-between">
+							<ul class="col-8 js-clone-nav text-start site-menu mx-auto d-flex justify-content-between">
 								<li ><a href="{{route('pocetna')}}">Почетна</a></li>
 								<li class="has-children">
-									<a href="category.html">Развој</a>
+									<a>Развој</a>
 									<ul class="dropdown">
 										<li><a href="{{route('alat.alati')}}">Алати</a></li>
-										<li><a href="{{route('blog.blogovi')}}">Инфо</a></li>
+										<li><a href="{{route('uputstva')}}">Инфо</a></li>
 									</ul>
 								</li>
 								<li><a href="category.html">Дизајн</a></li>
 								<li><a href="category.html">Магазин</a></li>
-								<li><a href="category.html">Заједница</a></li>
-                                <li><a href="{{route('login')}}">Пријави се</a></li>
+								<li><a href="{{route('blog.blogovi')}}">Заједница</a></li>
+
+                                @if (Auth::check())               
+								<li><a href="{{route('profile.edit')}}">Профил</a></li>
+                                    <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <button style="background-color: transparent;
+                                        border: none;
+                                        cursor: pointer;
+                                        padding-top: 0.6em;
+                                        font-family: inherit;
+                                        font-size: 18px;
+                                        width: 50px;
+                                        color: #b7bbbf;">
+                                            Логоут
+                                        </button>
+                                    </form>
+                                {{-- </li> --}}
+                                @else
+                                    <li><a href="{{route('login')}}">Улогуј се</a></li>
+                                    <li><a href="{{route('register')}}">Региструј се</a></li>
+                                @endif
 							</ul>
 						</div>
 						{{-- <div class="col-2 text-end">

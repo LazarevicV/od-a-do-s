@@ -26,8 +26,17 @@ Route::get('/', function () {
     ]);
 })->name('pocetna');
 
+Route::get('/uputstva', function () {
+    $uputstva_blogovi = BlogController::uputstva();
+    return view('blog.blogovi', [
+        'blogovi' => $uputstva_blogovi,
+        'title' => 'Упутства'
+    ]);
+})->name('uputstva');
+
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('pocetna');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
