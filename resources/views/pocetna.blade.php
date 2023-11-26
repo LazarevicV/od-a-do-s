@@ -68,11 +68,11 @@
                 </div>
             </div>
             <div class="row g-3 px-5" style="text-align: justify;">
-                <p style="font-size: 22px">Добродошли на наш онлајн портал, посвећеном простору где заговарaмо повећану употребу ћирилице на пространству интернета. У основи наше мисије је уверење да богат и разноврстан свет ћириличног писма заслужује већу препознатљивост у дигиталном свету. Стојимо као светионик, подстицајући појединце и заједнице да прихвате и појачају свој језички и културни идентитет путем употребе ћирилице</p>
+                <p style="font-size: 22px">Добродошли на наш онлајн портал, посвећен промовисању употребе ћирилице на интернету. У основи наше мисије је уверење да богат и разноврстан свет ћириличног писма заслужује већу препознатљивост у дигиталном свету. Стојимо као светионик, подстицајући појединце и заједнице да прихвате и појачају свој језички и културни идентитет путем употребе ћирилице</p>
             </div>
     </section>
     <!-- End posts-entry -->
-    <section class="section posts-entry p-0" style="height: 2px; background-color: #0D1B2A; margin: 0 7%">
+    <section class="section posts-entry p-0" style="height: 40px; background-color: #243a53;">
     </section>
     <!-- Start posts-entry -->
     <section class="section posts-entry bg-light">
@@ -100,7 +100,7 @@
         </div>
     </section>
     <!-- End posts-entry -->
-    <section class="section posts-entry p-0" style="height: 2px; background-color: #0D1B2A; margin: 0 7%">
+    <section class="section posts-entry p-0" style="height: 40px; background-color: #243a53">
     </section>
     <!-- Start posts-entry -->
     <section class="section posts-entry">
@@ -140,7 +140,7 @@
         </div>
     </section>
     <!-- End posts-entry -->
-    <section class="section posts-entry p-0" style="height: 2px; background-color: #0D1B2A; margin: 0 7%">
+    <section class="section posts-entry p-0" style="height: 40px; background-color: #243a53">
     </section>
     <!-- Start posts-entry -->
     <section class="section posts-entry">

@@ -14,6 +14,7 @@ class KomentarController extends Controller
         $komentar->sadrzaj= $request->input('sadrzaj');
         $komentar->user_id = Auth::id();
         $komentar->blog_id=$blog_id;
+        $komentar->save();  
 
         return redirect(route('blog.blog', ['id'=>$blog_id]));
     }

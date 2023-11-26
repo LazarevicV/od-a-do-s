@@ -22,6 +22,8 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
+	<script src="https://cdn.tiny.cloud/1/YOUR_API_KEY/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
     <link rel="stylesheet" href="{{ asset('css/tiny-slider.css') }}">
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/glightbox.min.css') }}">
@@ -59,7 +61,7 @@
 							</form>
 
 							<ul class="col-6 js-clone-nav text-start site-menu mx-auto d-flex justify-content-between">
-								<li class="active"><a href="index.html">Почетна</a></li>
+								<li ><a href="{{route('pocetna')}}">Почетна</a></li>
 								<li class="has-children">
 									<a href="category.html">Развој</a>
 									<ul class="dropdown">
