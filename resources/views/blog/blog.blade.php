@@ -16,23 +16,24 @@
             <br>
             <h3>Коментари:</h3>
 
-            <!-- Input field and button in the same row -->
-            <form action="{{ route('komentar.dodajSubmit', ['blog_id' => $blog->id]) }}" method="post" class="mb-3">
-                @csrf
-                <div class="row align-items-center">
-                    <label for="sadrzaj" class="form-label">Додај коментар:</label>
-                    <div class="col-9" style="height: 40px">
-                        <input type="text" class="form-control m-0" name="sadrzaj" required style="height: 40px">
+            @if (Auth::check())
+                <form action="{{ route('komentar.dodajSubmit', ['blog_id' => $blog->id]) }}" method="post" class="mb-3">
+                    @csrf
+                    <div class="row align-items-center">
+                        <label for="sadrzaj" class="form-label">Додај коментар:</label>
+                        <div class="col-9" style="height: 40px">
+                            <input type="text" class="form-control m-0" name="sadrzaj" required style="height: 40px">
+                        </div>
+                        <div class="col-3" style="height: 40px">
+                            <button type="submit" class="btn btn-primary w-100 p-0" style="height: 40px">Објави коментар</button>
+                        </div>
                     </div>
-                    <div class="col-3" style="height: 40px">
-                        <button type="submit" class="btn btn-primary w-100 p-0" style="height: 40px">Објави коментар</button>
-                    </div>
-                </div>
-            </form>
-            
-            
+                </form>
+            @else
+                <p>Морате бити улоговани да бисте коментарисали <a style="margin-left: 30px;" class="btn btn-primary p-2" href="{{route('login')}}">Улогујте се</a></p>
+            @endif                        
 
-            @if($blog->komentari->count() > 0)
+            @if($blog->komentari->where('objavljen', 1)->count() > 0)
                 <div class="list-group mt-3">
                     @foreach($blog->komentari->where('objavljen', 1) as $komentar)
                         <div class="list-group-item">
@@ -47,7 +48,7 @@
                                 
                                 <div>
                                     @if (Auth::check() && Auth::user()->ime_prezime === $komentar->user->ime_prezime)
-                                        <button class="btn btn-danger p-1" style="font-size: 12px;">Обриши</button>
+                                        <a href="{{route('komentar.unpublishKorisnik', $komentar->id)}}" class="btn btn-danger p-1" style="font-size: 12px;">Обриши</a>
                                     @endif
                                 </div>
                             </div>
@@ -57,7 +58,18 @@
                     @endforeach
                 </div>
             @else
-                <p>Нема коментара на овој објави</p>
+                <div class="list-group mt-3">
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex flex-row">
+                                    <h5 class="mr-2 d-flex align-items-center">
+                                        Нема коментара на овој објави
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height:5px"></div>
+                </div>
             @endif
         
 

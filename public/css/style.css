@@ -10514,3 +10514,144 @@ textarea {
       .site-footer .social li a:hover {
         background: #fff;
         color: #214252; }
+
+.font-preview {
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+  font-family: 'Adamant_BG';
+  src: url('/fonts/cirilica/fontovi/Adamant_BG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+      
+@font-face {
+  font-family: 'ArealRNIDS-Regular';
+  src: url('/fonts/cirilica/fontovi/ArealRNIDS-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dijakritika-Regular';
+  src: url('/fonts/cirilica/fontovi/Dijakritika-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EtarRNIDS-Regular';
+  src: url('/fonts/cirilica/fontovi/EtarRNIDS-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LingvaRNIDS-Regular';
+  src: url('/fonts/cirilica/fontovi/LingvaRNIDS-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OrtoRNIDS-Regular';
+  src: url('/fonts/cirilica/fontovi/OrtoRNIDS-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Optina-Regular';
+  src: url('/fonts/cirilica/fontovi/Optina-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dijakritika-Regular';
+  src: url('/fonts/cirilica/fontovi/Dijakritika-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NocturnoBG';
+  src: url('/fonts/cirilica/fontovi/NocturnoBG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ResavskaBG';
+  src: url('/fonts/cirilica/fontovi/ResavskaBG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ResavskaBGSans';
+  src: url('/fonts/cirilica/fontovi/ResavskaBGSans.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adamant_BG';
+  src: url('/fonts/cirilica/fontovi/Adamant_BG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AdamantSansBG';
+  src: url('/fonts/cirilica/fontovi/AdamantSansBG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoplantaBG';
+  src: url('/fonts/cirilica/fontovi/NeoplantaBG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlatanBG';
+  src: url('/fonts/cirilica/fontovi/PlatanBG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NiokiBG';
+  src: url('/fonts/cirilica/fontovi/NiokiBG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LovelySofiaBG';
+  src: url('/fonts/cirilica/fontovi/LovelySofiaBG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InfluBG';
+  src: url('/fonts/cirilica/fontovi/InfluBG.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tesla';
+  src: url('/fonts/cirilica/fontovi/Tesla.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

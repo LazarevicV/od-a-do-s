@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('content')
-    <div class="container mt-5 col-8">
+    <div class="container mt-5 col-7 mb-5">
         <h1>{{$title}}</h1>
         @if (!empty($resurs->fontovi[0]))
             @foreach ($resurs->fontovi as $font)
@@ -24,9 +24,11 @@
             @foreach ($resurs->video_tutorijali as $vt)
                 {{-- @if ($vt->objavljen) --}}
                 <hr> 
+                <br>
                 <h4>{{$vt->naziv}}</h4>
                 <p>{{$vt->opis}}</p>
-                <div>{!! $vt->embed_video !!}</div>
+                <div style="text-align: center;">{!! $vt->embed_video !!}</div>
+                <br>
                 {{-- @endif --}}
             @endforeach
         @endif

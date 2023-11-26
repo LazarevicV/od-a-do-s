@@ -156,7 +156,7 @@
                 <div class="col-sm-6">
                     <h2 class="posts-entry-title">Истакнути чланци</h2>
                 </div>
-                {{-- <div class="col-sm-6 text-sm-end"><a href="{{route('blog.blogovi')}}" class="read-more">Погледај све</a></div>
+                <div class="col-sm-6 text-sm-end"><a href="{{route('blog.blogovi')}}" class="read-more">Погледај све</a></div>
             </div>
 
             <div class="row align-items-stretch retro-layout-alt mb-5 px-5">
@@ -195,7 +195,7 @@
                                 <h2>{{$istaknuti_blogovi[3]->naslov}}</h2>
                             </div>
                         </a>
-                    </div> --}}
+                    </div>
 
                 </div>
             </div>

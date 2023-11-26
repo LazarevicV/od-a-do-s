@@ -89,4 +89,12 @@ class FontController extends Controller
         $font->save();
         return redirect(route('font.list'));
     }
+
+    public function preview(Request $request)
+    {
+        $fonts = Font::all()->sortByDesc('id');
+        $message = $request->input('message', 'Упишите поруку коју желите да видите');
+
+        return view('fontovi', compact('fonts', 'message'), ['title'=>'Fontovi']);
+    }
 }

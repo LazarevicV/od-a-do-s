@@ -70,6 +70,8 @@ Route::prefix('/blog')->group(function () {
     });
 });
 
+Route::get('fontovi', [FontController::class,'preview'])->name('fontovi');
+
 Route::get('alati', [AlatController::class, 'alati'])->name('alat.alati');
 
 Route::prefix('/alat/')->group(function () {
@@ -121,6 +123,7 @@ Route::prefix('/komentar')->group(function () {
         Route::name('komentar.')->group(function () {
             Route::middleware('check_role:admin:user')->group(function () {
                 Route::post('/dodaj/{blog_id}', 'dodajSubmit')->name('dodajSubmit');
+                Route::get('/unpublish_korisnik/{id}', 'unpublishKorisnik')->name('unpublishKorisnik');
             });
 
             Route::middleware('check_role:admin')->group(function () {
