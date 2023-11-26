@@ -18,6 +18,14 @@ class KomentarController extends Controller
 
         return redirect(route('blog.blog', ['id'=>$blog_id]));
     }
+    public function unpublishKorisnik($id)
+    {
+        $komentar=Komentar::find($id);
+        if(!$komentar) return abort(404);
+        $komentar->objavljen=0;
+        $komentar->save();
+        return redirect(route('blog.blog', $komentar->blog->id));
+    }
     //crud metode
     public function list(){
         $komentari=Komentar::all();
@@ -42,15 +50,6 @@ class KomentarController extends Controller
         $komentar->objavljen=0;
         $komentar->save();
         return redirect(route('komentar.list'));
-    }
-
-    public function unpublishKorisnik($id)
-    {
-        $komentar=Komentar::find($id);
-        if(!$komentar) return abort(404);
-        $komentar->objavljen=0;
-        $komentar->save();
-        return redirect(route('blog.blog', $komentar->blog->id));
     }
 
     public function obrisi($id){

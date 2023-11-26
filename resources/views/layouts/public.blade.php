@@ -93,7 +93,7 @@
 											font-size: 18px;
 											width: 50px;
 											color: #b7bbbf;">
-												Логоут
+												Одјави се
 											</button>
 										</form>
 									{{-- </li> --}}
