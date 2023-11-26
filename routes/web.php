@@ -7,6 +7,7 @@ use App\Http\Controllers\AlatController;
 use App\Http\Controllers\FontController;
 use App\Http\Controllers\ResursController;
 use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\KontaktController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoTutorijalController;
 
@@ -191,6 +192,18 @@ Route::middleware('check_role:admin')->group(function () {
                 Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
                 Route::get('/unesi', 'unesi')->name('unesi');
                 Route::post('/unesi', 'unesiSubmit')->name('unesiSubmit');
+            });
+        });
+    });
+});
+
+Route::middleware('check_role:admin')->group(function () {
+    Route::prefix('/kontakt')->group(function() {
+        Route::name('kontakt.')->group(function() {
+            Route::controller(KontaktController::class)->group(function() {
+                Route::get('/list', 'index')->name('list');
+                Route::get('/obrisi/{id}', 'obrisi')->name('obrisi');
+                Route::get('/procitano/{id}', 'procitano')->name('check');
             });
         });
     });
