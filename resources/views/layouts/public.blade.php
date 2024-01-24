@@ -53,7 +53,7 @@
 						<div class="row g-0 align-items-center">
 							<div class="col-3 d-flex align-items-center">
 								<a href="{{route('pocetna')}}">
-									<img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid">
+									<img src="{{ asset('img/logo1.png') }}" alt="" class="img-fluid">
 								</a>
 							</div>
 
