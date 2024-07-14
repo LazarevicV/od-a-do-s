@@ -194,9 +194,9 @@ Route::prefix('/видео-упутство')->group(function () {
 });
 
 Route::middleware('check_role:admin')->group(function () {
-    Route::prefix('/корисници')->group(function() {
-        Route::name('korisnici.')->group(function() {
-            Route::controller(UserController::class)->group(function() {
+    Route::prefix('/корисници')->group(function () {
+        Route::name('korisnici.')->group(function () {
+            Route::controller(UserController::class)->group(function () {
                 Route::get('/листа', 'list')->name('list');
                 Route::get('/измени/{id}', 'izmeni')->name('izmeni');
                 Route::post('/измени/{id}', 'izmeniSubmit')->name('izmeniSubmit');
@@ -209,9 +209,9 @@ Route::middleware('check_role:admin')->group(function () {
 });
 
 Route::middleware('check_role:admin')->group(function () {
-    Route::prefix('/контакт')->group(function() {
-        Route::name('kontakt.')->group(function() {
-            Route::controller(KontaktController::class)->group(function() {
+    Route::prefix('/контакт')->group(function () {
+        Route::name('kontakt.')->group(function () {
+            Route::controller(KontaktController::class)->group(function () {
                 Route::get('/листа', 'index')->name('list');
                 Route::get('/обриши/{id}', 'obrisi')->name('obrisi');
                 Route::get('/прочитано/{id}', 'procitano')->name('check');
@@ -219,5 +219,6 @@ Route::middleware('check_role:admin')->group(function () {
         });
     });
 });
+Route::post('/контакт', [KontaktController::class, 'dodaj'])->name('kontakt.dodaj');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

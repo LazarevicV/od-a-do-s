@@ -34,4 +34,14 @@ class KontaktController extends Controller
         $k->delete();
         return redirect()->route('kontakt.list');
     }
+
+    public function dodaj(Request $request)
+    {
+        $kontakt = new Kontakt();
+        $kontakt->email = $request->input('email');
+        $kontakt->sadrzaj = $request->input('sadrzaj');
+        $kontakt->save();
+
+        return redirect()->back();
+    }
 }
