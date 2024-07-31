@@ -25,8 +25,10 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <script src="https://cdn.tiny.cloud/1/nm7d9yzl5cww8btcie73ml75ggzmk3b8mq4ux593831qmegk/tinymce/7/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    {{-- <script
+        src="https://cdn.tiny.cloud/1/nm7d9yzl5cww8btcie73ml75ggzmk3b8mq4ux593831qmegk/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script> --}}
+    <script src="{{asset('js/tinymce/tinymce.min.js')}}"></script>
 
 
     <link rel="stylesheet" href="{{ asset('css/tiny-slider.css') }}">
