@@ -41,7 +41,7 @@ class FontController extends Controller
     public function unesifile($font_id)
     {
         $font = Font::find($font_id);
-        if (! $font) {
+        if (!$font) {
             return abort(404);
         }
 
@@ -53,10 +53,18 @@ class FontController extends Controller
 
     public function unesifileSubmit(Request $request, $font_id)
     {
-        $file = new File();
-        $file->naziv = $request->input('naziv');
-        $file->font_id = $request->input('font_id');
-        $file->save();
+        $files = new File();
+        if ($request->hasFile('fajl')) {
+            $fajl = $request->file('fajl');
+            $name = $fajl->getClientOriginalName();
+            $desinationPath = public_path('/fonts/cirilica');
+            $fajl->move($desinationPath, $name);
+
+            $files->font_id = $font_id;
+            $files->naziv = $name;
+
+            $files->save();
+        }
 
         return redirect(route('font.list'))->with('info', 'Запис је унет.');
     }
@@ -64,7 +72,7 @@ class FontController extends Controller
     public function izmeni($id)
     {
         $font = Font::find($id);
-        if (! $font) {
+        if (!$font) {
             return abort(404);
         }
 
@@ -77,7 +85,7 @@ class FontController extends Controller
     public function izmeniSubmit(Request $request, $id)
     {
         $font = Font::find($id);
-        if (! $font) {
+        if (!$font) {
             return abort(404);
         }
 
@@ -94,7 +102,7 @@ class FontController extends Controller
     public function publish($id)
     {
         $font = Font::find($id);
-        if (! $font) {
+        if (!$font) {
             return abort(404);
         }
         $font->objavljen = 1;
@@ -106,7 +114,7 @@ class FontController extends Controller
     public function unpublish($id)
     {
         $font = Font::find($id);
-        if (! $font) {
+        if (!$font) {
             return abort(404);
         }
         $font->objavljen = 0;
@@ -126,7 +134,7 @@ class FontController extends Controller
     public function obrisi($id)
     {
         $font = Font::find($id);
-        if (! $font) {
+        if (!$font) {
             return abort(404);
         }
         $font->fajlovi()->delete();

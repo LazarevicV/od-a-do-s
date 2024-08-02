@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('resurs', function (Blueprint $table) {
+        Schema::create('blog_categories', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('naziv', 128)->charset('utf8mb4')->collate('utf8mb4_unicode_ci');
-            $table->text('opis')->nullable()->charset('utf8mb4')->collate('utf8mb4_unicode_ci');
-            $table->boolean('objavljen')->default(0);
-            $table->string('alias', 128);
+            $table->string('naziv');
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('resurs');
+        Schema::dropIfExists('blog_categories');
     }
 };

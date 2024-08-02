@@ -19,7 +19,7 @@ class ResursController extends Controller
 
     public function resurs($id)
     {
-        $resurs = Resurs::find($id);
+        $resurs = Resurs::where('alias', '=', $id)->get()->first();
 
         return view('resurs.resurs', [
             'resurs' => $resurs,

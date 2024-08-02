@@ -2,6 +2,26 @@
 @section('content')
 
 <div class="container mt-5">
+    <h1>{{ $title }}</h1>
+    <hr>
+    <form method="GET" action="{{ route('blog.blogovi') }}">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <select name="kategorija" class="form-select">
+                    <option value="">Све категорије</option>
+                    @foreach ($categories as $category)
+                    <option value="{{ $category->naziv }}" {{ request('kategorija')==$category->naziv ? 'selected' : ''
+                        }}>
+                        {{ $category->naziv }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Претражи</button>
+            </div>
+        </div>
+    </form>
     <div class="row">
         @foreach ($blogovi as $blog)
         <div class="col-4 mb-4">
@@ -15,7 +35,7 @@
                         {!! mb_strlen(strip_tags($blog->sadrzaj)) > 90 ? '...' : '' !!}
                     </p>
 
-                    <p class="card-text"><small class="text-muted">{{ $blog->kategorija }}</small></p>
+                    <p class="card-text"><small class="text-muted">{{ $blog->blogCategory->naziv }}</small></p>
                     <a href="{{ route('blog.blog', $blog->id) }}" class="btn btn-primary p-2">Прочитај више</a>
                 </div>
             </div>

@@ -64,10 +64,7 @@
                             </div>
 
                             <div class="col-9">
-                                <form action="#" class="search-form d-inline-block d-lg-none">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="bi-search"></span>
-                                </form>
+
 
                                 <ul class="col-8 js-clone-nav text-start site-menu d-flex justify-content-between"
                                     style="margin-left:150px!important;">
@@ -99,9 +96,12 @@
                                     <li class="has-children">
                                         <a href="{{route('resurs.resursi')}}">Ресурси</a>
                                         <ul class="dropdown">
-                                            <li><a href="{{route('resurs.resurs', 1)}}" class="dropdaun">База
+
+                                            <li><a href="{{route('resurs.resurs', 'база-фонтова')}}"
+                                                    class="dropdaun">База
                                                     фонтова</a></li>
-                                            <li><a href="{{route('resurs.resurs', 2)}}" class="dropdaun">Видео
+                                            <li><a href="{{route('resurs.resurs', 'видео-туторијали')}}"
+                                                    class="dropdaun">Видео
                                                     туторијали</a></li>
                                         </ul>
                                     </li>
