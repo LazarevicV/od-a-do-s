@@ -51,6 +51,7 @@ class ResursController extends Controller
         $resurs->naziv = $request->input('naziv');
         $resurs->opis = $request->input('opis');
         $resurs->objavljen = $request->input('objavljen');
+        $resurs->alias = $request->input('alias');
         $resurs->save();
 
         return redirect(route('resurs.list'))->with('info', 'Запис је унет.');

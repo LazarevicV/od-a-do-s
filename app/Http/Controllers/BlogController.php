@@ -18,12 +18,12 @@ class BlogController extends Controller
             if ($kategorija) {
                 $blogovi = Blog::whereHas('blogCategory', function ($query) use ($kategorija) {
                     $query->where('naziv', $kategorija);
-                })->get();
+                })->where('objavljen', 1)->get();
             } else {
-                $blogovi = Blog::all();
+                $blogovi = Blog::all()->where('objavljen', 1);
             }
         } else {
-            $blogovi = Blog::all();
+            $blogovi = Blog::all()->where('objavljen', 1);
         }
 
         $istaknuti_blogovi = BlogController::istaknuti();
@@ -63,6 +63,7 @@ class BlogController extends Controller
         return view('blog.blogovi', [
             'blogovi' => $blogovi,
             'title' => $title,
+            'categories' => BlogCategory::all(),
         ]);
     }
 

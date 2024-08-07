@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
-<div class="container my-5 col-6">
-    <h1>{{$title}}</h1>
+<div class="container pt-4 pb-4">
+    <h1 class="text-center text-md-start ">{{$title}}</h1>
     <form action="{{ route('alat.unesiSubmit') }}" method="POST">
         @csrf
         <div class="mb-3">
@@ -28,8 +28,8 @@
         </div>
         <div class="mb-3">
             <div class="row justify-content-center">
-                <button type="submit" class="col-2 mx-1 btn btn-primary">Унеси</button>
-                <a href="{{route('resurs.list')}}" class="col-2 mx-1 btn btn-link"
+                <button type="submit" class="col-2 mx-1 btn btn-primary prosiri_dugme">Унеси</button>
+                <a href="{{route('resurs.list')}}" class="col-2 mx-1 btn btn-link prosiri_dugme"
                     style="border: 1px solid #214252;">Откажи</a>
             </div>
         </div>
@@ -49,4 +49,13 @@
             toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | charmap | fullscreen code | insertfile image media pageembed link anchor'
         });
 </script>
+
+<style>
+    @media only screen and (max-width: 750px) {
+        .prosiri_dugme {
+            width: 45%;
+            margin: 0 auto;
+        }
+    }
+</style>
 @endsection

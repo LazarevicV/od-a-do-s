@@ -42,77 +42,146 @@
 </head>
 
 <body class="d-flex flex-column" style="min-height: 100vh;">
-    <nav class="site-nav" id="sticky-nav">
-        <div class="site-mobile-menu site-navbar-target">
-            <div class="site-mobile-menu-header">
-                <div class="site-mobile-menu-close">
-                    <span class="icofont-close js-menu-toggle"></span>
-                </div>
-            </div>
-            <div class="site-mobile-menu-body"></div>
+
+    <!-- Hamburger Menu Toggle Button -->
+    <nav class="navbar navbar-dark d-lg-none d-block" style="background-color: #0D1B2A">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
+    </nav>
 
-        <nav class="site-nav">
-            <div class="container">
-                <div class="menu-bg-wrap">
-                    <div class="site-navigation">
-                        <div class="row g-0 align-items-center">
-                            <div class="col-3 d-flex align-items-center">
-                                <a href="{{route('pocetna')}}">
-                                    <img src="{{ asset('img/logo1.png') }}" alt="" class="img-fluid">
-                                </a>
-                            </div>
+    <!-- Collapsible Menu -->
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="text-white p-5" style="background-color: #0D1B2A">
+            <ul class="navbar-nav">
+                @if (Auth::check() and Auth::user()->hasRole('admin'))
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="adminMenu" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Админ мени</a>
+                    <ul class="dropdown-menu" aria-labelledby="adminMenu">
+                        <li><a class="dropdown-item text-dark" href="{{route('blog.list')}}">Блогови</a></li>
+                        <li><a class="dropdown-item text-dark" href="{{route('komentar.list')}}">Коментари</a></li>
+                        <li><a class="dropdown-item text-dark" href="{{route('alat.list')}}">Алати</a></li>
+                        <li><a class="dropdown-item text-dark" href="{{route('resurs.list')}}">Ресурси</a></li>
+                        <li><a class="dropdown-item text-dark" href="{{route('font.list')}}">Фонтови</a></li>
+                        <li><a class="dropdown-item text-dark" href="{{route('videoTutorijal.list')}}">Видео
+                                туторијали</a></li>
+                        <li><a class="dropdown-item text-dark" href="{{route('korisnici.list')}}">Корисници</a></li>
+                        <li><a class="dropdown-item text-dark" href="{{route('kontakt.list')}}">Контакт</a></li>
+                    </ul>
+                </li>
+                @endif
+                <li class="nav-item"><a class="nav-link text-white" href="{{route('pocetna')}}">Почетна</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="developmentMenu" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Развој</a>
+                    <ul class="dropdown-menu" aria-labelledby="developmentMenu">
+                        <li><a class="dropdown-item text-dark" href="{{route('alat.alati')}}">Алати</a></li>
+                        <li><a class="dropdown-item text-dark" href="{{route('uputstva')}}">Упутства</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="resourcesMenu" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Ресурси</a>
+                    <ul class="dropdown-menu" aria-labelledby="resourcesMenu">
+                        <li><a class="dropdown-item text-dark" href="{{route('resurs.resurs', 'база-фонтова')}}">База
+                                фонтова</a></li>
+                        <li><a class="dropdown-item text-dark"
+                                href="{{route('resurs.resurs', 'видео-туторијали')}}">Видео туторијали</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link text-white" href="{{route('blog.blogovi')}}">Блог</a></li>
+                @if (Auth::check())
+                <li class="nav-item"><a class="nav-link text-white" href="{{route('profile.edit')}}">Профил</a></li>
+                <li class="nav-item" style="margin-left: -20px">
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-link text-white">Одјави се</button>
+                    </form>
+                </li>
+                @else
+                <li class="nav-item"><a class="nav-link text-white" href="{{route('login')}}">Улогуј се</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{{route('register')}}">Региструј се</a></li>
+                @endif
+            </ul>
+        </div>
+    </div>
 
-                            <div class="col-9">
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="site-nav d-none d-lg-block">
+        <div class="container">
+            <div class="menu-bg-wrap">
+                <div class="site-navigation">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-3 d-flex align-items-center">
+                            <a href="{{route('pocetna')}}">
+                                <img src="{{ asset('img/logo1.png') }}" alt="" class="img-fluid"
+                                    style="margin-top: -3%">
+                            </a>
+                        </div>
+
+                        <div class="col-9">
 
 
-                                <ul class="col-8 js-clone-nav text-start site-menu d-flex justify-content-between"
-                                    style="margin-left:150px!important;">
-                                    @if (Auth::check() and Auth::user()->hasRole('admin'))
-                                    <li class="has-children">
-                                        <a>Админ мени</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{{route('blog.list')}}" class="dropdaun">Блогови</a></li>
-                                            <li><a href="{{route('komentar.list')}}" class="dropdaun">Коментари</a></li>
-                                            <li><a href="{{route('alat.list')}}" class="dropdaun">Алати</a></li>
-                                            <li><a href="{{route('resurs.list')}}" class="dropdaun">Ресурси</a></li>
-                                            <li><a href="{{route('font.list')}}" class="dropdaun">Фонтови</a></li>
-                                            <li><a href="{{route('videoTutorijal.list')}}" class="dropdaun">Видео
-                                                    туторијали</a></li>
-                                            <li><a href="{{route('korisnici.list')}}" class="dropdaun">Корисници</a>
-                                            </li>
-                                            <li><a href="{{route('kontakt.list')}}" class="dropdaun">Контакт</a></li>
-                                        </ul>
-                                    </li>
-                                    @endif
-                                    <li><a href="{{route('pocetna')}}">Почетна</a></li>
-                                    <li class="has-children">
-                                        <a>Развој</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{{route('alat.alati')}}" class="dropdaun">Алати</a></li>
-                                            <li><a href="{{route('uputstva')}}" class="dropdaun">Упутства</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children">
-                                        <a href="{{route('resurs.resursi')}}">Ресурси</a>
-                                        <ul class="dropdown">
+                            <ul class="col-8 js-clone-nav text-start site-menu d-flex justify-content-between"
+                                style="margin-left:150px!important;">
+                                @if (Auth::check() and Auth::user()->hasRole('admin'))
+                                <li class="has-children">
+                                    <a>Админ мени</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{route('blog.list')}}" class="dropdaun">Блогови</a></li>
+                                        <li><a href="{{route('komentar.list')}}" class="dropdaun">Коментари</a></li>
+                                        <li><a href="{{route('alat.list')}}" class="dropdaun">Алати</a></li>
+                                        <li><a href="{{route('resurs.list')}}" class="dropdaun">Ресурси</a></li>
+                                        <li><a href="{{route('font.list')}}" class="dropdaun">Фонтови</a></li>
+                                        <li><a href="{{route('videoTutorijal.list')}}" class="dropdaun">Видео
+                                                туторијали</a></li>
+                                        <li><a href="{{route('korisnici.list')}}" class="dropdaun">Корисници</a>
+                                        </li>
+                                        <li><a href="{{route('kontakt.list')}}" class="dropdaun">Контакт</a></li>
+                                    </ul>
+                                </li>
+                                @endif
+                                <li><a href="{{route('pocetna')}}">Почетна</a></li>
+                                <li class="has-children">
+                                    <a>Развој</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{route('alat.alati')}}" class="dropdaun">Алати</a></li>
+                                        <li><a href="{{route('uputstva')}}" class="dropdaun">Упутства</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="{{route('resurs.resursi')}}">Ресурси</a>
+                                    <ul class="dropdown">
 
-                                            <li><a href="{{route('resurs.resurs', 'база-фонтова')}}"
-                                                    class="dropdaun">База
-                                                    фонтова</a></li>
-                                            <li><a href="{{route('resurs.resurs', 'видео-туторијали')}}"
-                                                    class="dropdaun">Видео
-                                                    туторијали</a></li>
-                                        </ul>
-                                    </li>
+                                        <li><a href="{{route('resurs.resurs', 'база-фонтова')}}" class="dropdaun">База
+                                                фонтова</a></li>
+                                        <li><a href="{{route('resurs.resurs', 'видео-туторијали')}}"
+                                                class="dropdaun">Видео
+                                                туторијали</a></li>
+                                    </ul>
+                                </li>
 
-                                    <li><a href="{{route('blog.blogovi')}}">Блог</a></li>
+                                <li><a href="{{route('blog.blogovi')}}">Блог</a></li>
 
-                                    @if (Auth::check())
-                                    <li><a href="{{route('profile.edit')}}">Профил</a></li>
-                                    <form action="{{route('logout')}}" method="POST">
-                                        @csrf
-                                        <button style="background-color: transparent;
+                                @if (Auth::check())
+                                <li><a href="{{route('profile.edit')}}">Профил</a></li>
+                                <form action="{{route('logout')}}" method="POST">
+                                    @csrf
+                                    <button style="background-color: transparent;
 											border: none;
 											cursor: pointer;
 											padding-top: 0.6em;
@@ -120,23 +189,22 @@
 											font-size: 18px;
 											width: 98px;
 											color: #b7bbbf;">
-                                            Одјави се
-                                        </button>
-                                    </form>
-                                    {{-- </li> --}}
-                                    @else
-                                    <li><a href="{{route('login')}}">Улогуј се</a></li>
-                                    <li><a href="{{route('register')}}">Региструј се</a></li>
-                                    @endif
-                                </ul>
-                            </div>
+                                        Одјави се
+                                    </button>
+                                </form>
+                                {{-- </li> --}}
+                                @else
+                                <li><a href="{{route('login')}}">Улогуј се</a></li>
+                                <li><a href="{{route('register')}}">Региструј се</a></li>
+                                @endif
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
     </nav>
-    <div class="col-2 mx-auto">
+    <div class="col-2 mx-auto make_bigger_when_small">
         @include('flash-message')
     </div>
     @yield('content')
@@ -147,8 +215,10 @@
             <div class="row">
                 <div class="col-lg-4 offset-lg-2">
                     <div class="widget">
-                        <p>Добродошли на наш веб портал, где се заступамо за коришћење ћирилице на интернету. Пружамо
-                            платформу за креативно и инклузивно дељење информација и искустава на ћириличном писму.</p>
+                        <p>Добродошли на наш веб портал, где се заступамо за коришћење ћирилице на интернету.
+                            Пружамо
+                            платформу за креативно и инклузивно дељење информација и искустава на ћириличном писму.
+                        </p>
                     </div>
                     <div class="widget">
                         <h3>Друштвене мреже</h3>
@@ -208,6 +278,22 @@
 
         .dropdaun {
             font-size: 16px !important;
+        }
+
+
+
+        @media only screen and (max-width: 1300px) {
+            .make_bigger_when_small {
+                width: 25%;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 750px) {
+            .make_bigger_when_small {
+                width: 90%;
+                margin: 0 auto;
+            }
         }
     </style>
 

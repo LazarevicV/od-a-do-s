@@ -2,14 +2,14 @@
 @section('content')
 
 <section class="section posts-entry">
-    <div class="container px-5" style="position: relative; top: 10px;">
-        <div class="row mb-4" style="padding-left: 20px">
-            <div class="col-sm-6">
-                <h2 class="posts-entry-title">Од А до Ш</h2>
+    <div class="container px-4 px-md-5" style="position: relative; top: 10px;">
+        <div class="row mb-4">
+            <div class="col-sm-12 col-md-6">
+                <h1 class="posts-entry-title text-center text-md-start">Од А до Ш</h1>
             </div>
         </div>
-        <div class="row g-3 px-5" style="text-align: justify;">
-            <p style="font-size: 22px">Добродошли на наш онлајн портал, посвећен промовисању употребе ћирилице на
+        <div class="row g-3" style="text-align: justify;">
+            <p class="fs-5">Добродошли на наш онлајн портал, посвећен промовисању употребе ћирилице на
                 интернету. У основи наше мисије је уверење да богат и разноврстан свет ћириличног писма заслужује већу
                 препознатљивост у дигиталном свету. Стојимо као светионик, подстицајући појединце и заједнице да
                 прихвате и појачају свој језички и културни идентитет путем употребе ћирилице</p>
@@ -20,14 +20,14 @@
 </section>
 
 <section class="section posts-entry bg-light">
-    <div class="container px-5" style="position: relative; top: 10px;">
-        <div class="row mb-4" style="padding-left: 20px">
-            <div class="col-sm-6">
-                <h2 class="posts-entry-title">Историја ћириличног писма</h2>
+    <div class="container px-4 px-md-5" style="position: relative; top: 10px;">
+        <div class="row mb-4">
+            <div class="col-sm-12 col-md-6">
+                <h2 class="posts-entry-title text-center text-md-start">Историја ћириличног писма</h2>
             </div>
         </div>
-        <div class="row g-3 px-5" style="text-align: justify; font-size: 18px">
-            <div class="col-9">
+        <div class="row g-3" style="text-align: justify; font-size: 16px;">
+            <div class="col-12 col-md-9">
                 <p>Историја српске ћириличне азбуке, познате као "ћирилица", дубоко је сплетена са културним и језичким
                     развојем земље. Настанак овог писма може се пратити у 9. веку и повезује се са византијским браћом
                     Ћирилом и Методијем, који су створили глаголичко писмо као средство за превођење словенских језика
@@ -37,11 +37,11 @@
                     пресудан тренутак у њеној историји. Постала је симбол културног идентитета и националног поноса.
                     Успреко изазовима и адаптацијама, писмо је опстало, одражавајући отпор српске културе.</p>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-md-3">
                 <img src="{{ asset('img/azbuka.png') }}" alt="" class="img-fluid">
             </div>
         </div>
-        <div class="col-12 px-5" style="text-align: justify; font-size: 18px">
+        <div class="col-12" style="text-align: justify; font-size: 16px;">
             <p>Током Српског националног Васкрснућа у 19. веку, предузети су напори да се оживи и промовише ћирилица као
                 средство за чување посебног језичког и културног идентитета народа. Ова обнова утврдила је статус
                 ћирилице као основног елемента српске баштине. Вук Караџић, истакнути српски филолог, имао је кључну
@@ -58,14 +58,14 @@
 </section>
 
 <section class="section posts-entry">
-    <div class="container px-5" style="position: relative; top: 10px;">
-        <div class="row mb-4" style="padding-left: 20px">
-            <div class="col-sm-6">
-                <h2 class="posts-entry-title">Историја ћирилице на интернету</h2>
+    <div class="container px-4 px-md-5" style="position: relative; top: 10px;">
+        <div class="row mb-4">
+            <div class="col-sm-12 col-md-6">
+                <h2 class="posts-entry-title text-center text-md-start">Историја ћирилице на интернету</h2>
             </div>
         </div>
-        <div class="row g-3 px-5" style="text-align: justify; font-size: 18px">
-            <div class="col-6">
+        <div class="row g-3" style="text-align: justify; font-size: 16px;">
+            <div class="col-12 col-md-6">
                 <p>Српска ћирилица је више него слабо заступљена на Интернету. Број српских сајтова урађених нашим
                     традиционалним писмом споро расте иако су квантитативно српски сајтови у рапидном порасту. Многи
                     ћирилични сајтови су се угасили, а неки, напросто, прешли на латиницу. </p>
@@ -78,23 +78,23 @@
                     након што је ова опција постала доступна на глобалном нивоу. Србија је, као друга држава у свету,
                     усвојила .srb домен 2011. године, а регистрација назива започела је 27. јануара 2012. године.</p>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <img src="{{ asset('img/domen.jpeg') }}" alt="" class="img-fluid">
             </div>
         </div>
         <br>
-        <div class="row g-3 px-5" style="text-align: justify; font-size: 18px">
+        <div class="row g-3" style="text-align: justify; font-size: 16px;">
             <div class="col-12">
                 <p>Иза већине сајтова урађених српском ћирилицом стоје традиционалисти емотивно везани за српски језик,
                     српско православље, српску ћирилицу и народно сећање. Остатак нашег народа који није нарочито, или
                     није уопште, везан за традицију не доживљава питање опстанка српске ћирилице као битно. </p>
             </div>
         </div>
-        <div class="row g-3 px-5" style="text-align: justify; font-size: 18px">
-            <div class="col-6">
+        <div class="row g-3" style="text-align: justify; font-size: 16px;">
+            <div class="col-12 col-md-6">
                 <img src="{{ asset('img/sfera.jpeg') }}" alt="" class="img-fluid">
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <p>Количина сајтова на .срб домену заиста није велика, а разлози за то су разноврсни. Важно је имати на
                     уму да је за комуникацију, било да је пословна или не, често клучна препрека језик, а не писмо.
                     Ћирилицу у свету разуме много више људи него српски језик, па је важно нагласити да један Француз
@@ -114,13 +114,13 @@
     <div class="container px-5">
         <div class="row mb-4">
             <div class="col-sm-6">
-                <h2 class="posts-entry-title">Истакнути чланци</h2>
+                <h2 class="posts-entry-title text-center text-md-start">Истакнути чланци</h2>
             </div>
             <div class="col-sm-6 text-sm-end"><a href="{{route('blog.blogovi')}}" class="read-more">Погледај све</a>
             </div>
         </div>
 
-        <div class="row align-items-stretch retro-layout-alt mb-5 px-5">
+        <div class="row align-items-stretch retro-layout-alt mb-5 px-5 prosiri-na-malom-ekranu">
             <div class="col-md-5 order-md-2">
                 <a href="{{ route('blog.blog', $istaknuti_blogovi[0]->id) }}" class="hentry img-1 h-100 gradient">
                     <div class="featured-img"
